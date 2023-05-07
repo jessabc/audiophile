@@ -17,37 +17,39 @@ export default function UpdateCart({children, thisProduct}: UpdateCartProps) {
 
 
 
-    const [count, setCount] = useState(  getDefaultValue())
-    console.log('coutn ran', count)
+    const [count, setCount] = useState(getDefaultValue())
+    console.log(state.cart)
+
+    useEffect(() => {
+        const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
+        if (cartStorage?.length > 0) {
+         dispatch({type: 'CART_STORAGE', payload: cartStorage });
+
+        }
+
+      }, []);
 
     function getDefaultValue() {
-
-
-      
         console.log('get def')
-
-        console.log(state.cart)
-        if(state.cart) {
-            const alreadyInCart =  state.cart.some(product => product.id === thisProduct.id) 
-       console.log(alreadyInCart)
-
-       
-
+        if(state.data.length > 0 || state.cart.length > 0) {
+                const alreadyInCart =  state.cart.some(product => product.id === thisProduct.id) 
+        console.log(alreadyInCart)
        if(alreadyInCart) {
         console.log(state.cart)
         console.log(thisProduct.id)
         const q  =  state.cart.find(product => product.id === thisProduct.id)?.quantity
         console.log(q)
-        return 33333333
+        return q
        } else {
-      
+      console.log(state.data)
         return state.data.find(product => product.id === thisProduct.id)?.quantity
-        
         
        } 
         }
+    
+    }
        
-   }
+   
  
     function decrement() {
         if(count > 0) {
@@ -66,6 +68,7 @@ export default function UpdateCart({children, thisProduct}: UpdateCartProps) {
             updateCart(thisProduct)
         
         }
+
     }, [count])
 
     function updateCart(thisProduct: IProduct) {
@@ -89,13 +92,7 @@ export default function UpdateCart({children, thisProduct}: UpdateCartProps) {
 
     }
 
-    // useEffect(() => {
-    //     const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
-    //     if (cartStorage?.length > 0) {
-    //      dispatch({type: 'CART_STORAGE', payload: cartStorage });
-
-    //     }
-    //   }, []);
+    
  
     
    

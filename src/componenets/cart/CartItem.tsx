@@ -24,7 +24,7 @@ export default function CartItem({item}: CartItemProps) {
             {!isOpen && <p className="ml-auto">x
             {item.quantity}</p>}
         
-            {isOpen && <UpdateCart thisProduct={item} />}
+            {/* {isOpen && <UpdateCart thisProduct={item} />} */}
             
         </div>
     )
