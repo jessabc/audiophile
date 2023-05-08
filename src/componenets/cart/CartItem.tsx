@@ -9,7 +9,7 @@ interface CartItemProps {
 
 export default function CartItem({item}: CartItemProps) {
 
-    const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+    const {state, dispatch} = useContext(ProductContext)
 
     return (
         <div className="flex">
@@ -21,10 +21,10 @@ export default function CartItem({item}: CartItemProps) {
                 <p>{item.price}</p> 
             </div>
 
-            {!isOpen && <p className="ml-auto">x
+            {!state.cartModal && <p className="ml-auto">x
             {item.quantity}</p>}
         
-            {/* {isOpen && <UpdateCart thisProduct={item} />} */}
+            {state.cartModal && <UpdateCart thisProduct={item} />}
             
         </div>
     )

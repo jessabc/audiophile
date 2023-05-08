@@ -3,11 +3,11 @@ import {ProductContext} from '../ProductContext'
 
 export function useGetTotal() {
 
-    const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+    const {state, dispatch} = useContext(ProductContext)
 
     function getTotal() {
         return state.cart.reduce((acc, curr) => {
-            return acc + (curr.quantity * curr.price)
+            return acc + (curr.quantity! * curr.price)
         }, 0)
     }
 

@@ -5,7 +5,7 @@ import { useGetTotal } from '../../hooks/useGetTotal'
 
 export default function Summary() {
 
-    const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+    // const {state, dispatch} = useContext(ProductContext)
 
     const cartItemElements = usecartItemElements()
 

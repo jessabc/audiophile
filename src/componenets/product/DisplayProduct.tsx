@@ -1,9 +1,13 @@
 import { Link, useLocation } from "react-router-dom"
 import { Includes } from "../../interfaces"
 import UpdateCart from "../cart/UpdateCart"
+import ItemAddedModal from "../modals/ItemAddedModal"
+import { useState } from "react"
 
 
 export default function DisplayProduct() {
+
+    const [isItemAddedModalVisible, setIsItemAddedModalVisible] = useState(false)
 
     const location = useLocation()
 
@@ -31,7 +35,9 @@ export default function DisplayProduct() {
                 <p> ${price}</p>
     
                 {/* add to  cart */}
-                <UpdateCart thisProduct = {location.state}/>
+                <UpdateCart thisProduct = {location.state} isItemAddedModalVisible={isItemAddedModalVisible}
+                setIsItemAddedModalVisible={setIsItemAddedModalVisible}
+                />
 
                 <p>Features: {features}</p>
                 
@@ -42,6 +48,8 @@ export default function DisplayProduct() {
                 </div>
 
                 {getGallery()}
+
+                {isItemAddedModalVisible && <ItemAddedModal isItemAddedModalVisible={isItemAddedModalVisible} setIsItemAddedModalVisible={setIsItemAddedModalVisible} name={name}/>}
 
             </div>
         

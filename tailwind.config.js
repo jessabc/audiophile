@@ -12,8 +12,8 @@ export default {
     colors: {
       'orange': '#D87D4A',
       'dark': '#101010',
-      'light': '#F1F1F1',
-      'transparent': '#FAFAFA',
+      'gray': '#F1F1F1',
+      'light': '#FAFAFA',
       'black': '#000000',
       'white': '#FFFFFF',
       'pink': '##fbaf85',

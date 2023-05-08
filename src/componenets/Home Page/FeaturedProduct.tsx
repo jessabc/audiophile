@@ -1,16 +1,20 @@
-interface FeaturedProductProps {
-    children: React.ReactNode
-}
+// interface FeaturedProductProps {
+//     children: React.ReactNode,
+//     src: string
+// }
 
-export default function FeaturedProduct({children}: FeaturedProductProps) {
+// export default function FeaturedProduct({children, src}: FeaturedProductProps) {
 
 
-    return (
-        <>
-            <div >
-                {children}
-                <button>see product</button>
-            </div>
-        </>
-    )
-} 
+//     return (
+//         <>
+//             <div >
+//                 <div>
+//                     <img src={src} alt="" />
+//                 </div>
+//                 {children}
+//                 <button>see product</button>
+//             </div>
+//         </>
+//     )
+// } 

@@ -1,7 +1,7 @@
 import {  Link } from "react-router-dom";
-import logo from '../../../public/assets/shared/desktop/logo.svg'
-import iconCart from '../../../public/assets/shared/desktop/icon-cart.svg'
-import iconHamburger from '../../../public/assets/shared/tablet/icon-hamburger.svg'
+import logo from '/src/assets/shared/desktop/logo.svg'
+import iconCart from '/src/assets/shared/desktop/icon-cart.svg'
+import iconHamburger from '/src/assets/shared/tablet/icon-hamburger.svg'
 import CartModal from '../modals/CartModal'
 import { useState } from "react";
 import { useContext } from 'react'
@@ -11,22 +11,31 @@ import Menu from "./Menu";
 
 export default function Header() {
 
-  const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+  const {state, dispatch} = useContext(ProductContext)
 
   const [isMenuVisible, setIsMenuVisible] = useState(false)
+  console.log(isMenuVisible)
+
+  function handleOnClick() {
+    dispatch({type:'CART_MODAL', payload: true})
+  }
 
     return  (
        <>
-          <header className="flex justify-between bg-black">
+          <header className="flex justify-between bg-black px-8 py-10 border-b border-gray">
 
-            <button className="lg:hidden">
-              <img src={iconHamburger} alt="" onClick={()=>setIsMenuVisible(prev=> !prev)}/>
+            {/* hamburger on small screen */}
+            <button className="lg:hidden" onClick={()=>setIsMenuVisible(prevState => !prevState)}
+            >
+              <img src={iconHamburger} alt="" />
             </button>
 
-            {/* logo */}
-            <img src={logo} alt="" />
+            {/* audiophile logo */}
+            <Link to='/'>
+                <img src={logo} alt="" />
+            </Link>
 
-            {/* hidden nav on mobile and tablet */}
+            {/* nav on tablet and desktop */}
             <nav className="text-white hidden lg:block">
               <ul className="flex">
                 <li>
@@ -44,13 +53,19 @@ export default function Header() {
               </ul> 
             </nav>
 
-            <button onClick={() => setIsOpen(true)}>
+            {/* cart icon */}
+            <button onClick={handleOnClick}>
               <img src={iconCart} alt="" />
             </button>
 
-            {isOpen && <CartModal />}
           </header>
 
+
+          {/* cart modal */}
+          {state.cartModal && 
+            <CartModal />}
+
+          {/* menu */}
           {isMenuVisible && 
           <div className="">
             <Menu/>

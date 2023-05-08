@@ -10,6 +10,7 @@ type Action = {type: 'SET_PRODUCT_DATA', payload: IProduct[] }
 |{type: 'REMOVE_ITEM_IN_CART', payload: IProduct } 
 | {type: 'REMOVE_ALL_ITEMS'}
 | {type: 'CART_STORAGE', payload: IProduct[] }
+| {type: 'CART_MODAL', payload: boolean }
 
 interface ProductContextProviderProps {
     children: ReactNode
@@ -18,7 +19,8 @@ interface ProductContextProviderProps {
 const initialState = {
     // https://stackoverflow.com/questions/68839420/typescript-react-usereducer-with-array-of-objects-in-interface
     data: [] as IProduct[],
-    cart: [] as IProduct[]
+    cart: [] as IProduct[], 
+    cartModal: false
 }
 
 function reducer(state: AppState, action: Action) {
@@ -51,6 +53,9 @@ function reducer(state: AppState, action: Action) {
         case 'CART_STORAGE': {
             return   { ...state, cart: action.payload}
         }
+        case 'CART_MODAL': {
+            return   { ...state, cartModal: action.payload}
+        }
         default:
             return state
     }
@@ -69,9 +74,9 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
 
     const [state, dispatch] = useReducer(reducer, initialState)
     
-    let [isOpen, setIsOpen] = useState(false)
+    // let [isOpen, setIsOpen] = useState(false)
 
-    console.log(state.cart)
+    // console.log(state.cart)
 
     // useEffect(() => {
     //     const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
@@ -81,13 +86,11 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
     //     }
     //   }, []);
 
-    useEffect(() => {
-        localStorage.setItem('cartStorage', JSON.stringify(state.cart));
-    }, [state.cart]);
+
 
   
     return (
-        <ProductContext.Provider value={{state, dispatch, isOpen, setIsOpen}}>
+        <ProductContext.Provider value={{state, dispatch}}>
             {children}
         </ProductContext.Provider>
     )

@@ -9,23 +9,23 @@ import { useGetTotal } from '../../hooks/useGetTotal'
 
 export default function CartModal() {
 
-  const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+  const {state, dispatch} = useContext(ProductContext)
 
   const getTotal = useGetTotal()
 
   const navigate = useNavigate();
 
   function closeModal() {
-    setIsOpen(false)
+    dispatch({type:'CART_MODAL', payload: false})
   }
 
   function openModal() {
-    setIsOpen(true)
+    dispatch({type:'CART_MODAL', payload: true})
   }
 
   function removeAll() {
     dispatch({type:'REMOVE_ALL_ITEMS'})
-    setIsOpen(false)
+    dispatch({type:'CART_MODAL', payload: false})
   }
 
   function checkout() {
@@ -37,7 +37,7 @@ export default function CartModal() {
   return (
     <>
 
-      <Transition appear show={isOpen} as={Fragment}>
+      <Transition appear show={state.cartModal} as={Fragment}>
 
         <Dialog as="div" className="relative z-10 " onClose={closeModal}>
 

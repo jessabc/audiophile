@@ -6,8 +6,13 @@ import { useGetTotal } from '../../hooks/useGetTotal'
 import iconOrderConfirmation from '../../../public/assets/checkout/icon-order-confirmation.svg'
 import CartItem from '../cart/CartItem'
 
+interface ConfirmationModalProps {
+  isConfirmationModalOpen: boolean,
+  setIsConfirmationModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirmationModalOpen}) {
+
+export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirmationModalOpen}: ConfirmationModalProps) {
  
 
   const {state, dispatch} = useContext(ProductContext)
@@ -27,7 +32,7 @@ export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirma
   }
 
   function openModal() {
-  isConfirmationModalOpen(true)
+    setIsConfirmationModalOpen(true)
   }
 
   function handleClick() {
