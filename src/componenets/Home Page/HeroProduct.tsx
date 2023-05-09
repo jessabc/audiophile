@@ -18,17 +18,34 @@ export default function HeroProduct() {
     }
 
     return (
-         <div className="relative mb-36">
+         <div className="relative mb-36 lg:mb-64">
 
             <div>
-                <img src={'/public/assets/home/mobile/image-header.jpg'} alt="" className="w-full"/>
+                {/* small screen / mobile */}
+                <img src='/public/assets/home/mobile/image-header.jpg' 
+                alt="" className="w-full md:hidden lg:hidden"/>
+                {/* med screen / tablet */}
+                <img src='/public/assets/home/tablet/image-header.jpg' 
+                alt="" className="w-full hidden md:block lg:hidden"/>
+                {/* lg screen / desktop */}
+                <img src='/public/assets/home/desktop/image-hero.jpg' 
+                alt="" className="w-full hidden lg:block"/>
             </div>
 
-            <div className="text-white absolute top-48 px-8 flex flex-col items-center gap-4">
-                <p className="text-sm leading-5 text-center tracking-widest uppercase text-white opacity-50">NEW PRODUCT</p>
-                <p className='font-bold text-4xl leading-10 text-center tracking-wider uppercase'>{heroItem?.name}</p>
-                <p className='font-semibold text-center text-white opacity-75 leading-loose my-3'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-40 h-12' onClick={routeChange}>see product</button>
+            <div className="text-white absolute top-48 px-8  flex flex-col items-center gap-4 
+            md:px-32
+            md:gap-6
+            lg:items-start
+            lg:w-1/2 lg:top-1/4
+            ">
+                <p className="text-sm leading-5 text-center tracking-widest uppercase text-white opacity-50
+             
+                ">NEW PRODUCT</p>
+                <p className='font-bold text-4xl leading-10 text-center tracking-wider uppercase
+                md:text-6xl 
+              lg:text-left'>{heroItem?.name}</p>
+                <p className='font-semibold text-center text-white opacity-75 leading-loose my-3 lg:text-left'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-40 h-12 hover:bg-lightOrange' onClick={routeChange}>see product</button>
             </div>
           
         </div>

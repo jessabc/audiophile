@@ -22,7 +22,14 @@ export default function Header() {
 
     return  (
        <>
-          <header className="flex justify-between bg-black px-8 py-10 border-b border-gray">
+          <header className="flex justify-between bg-black px-8 py-10 border-b border-gray
+
+          md:px-12 md:justify-start md:gap-10
+
+          lg:px-32
+          lg:gap-16
+          
+          ">
 
             {/* hamburger on small screen */}
             <button className="lg:hidden" onClick={()=>setIsMenuVisible(prevState => !prevState)}
@@ -36,25 +43,25 @@ export default function Header() {
             </Link>
 
             {/* nav on tablet and desktop */}
-            <nav className="text-white hidden lg:block">
-              <ul className="flex">
-                <li>
+            <nav className="font-bold text-white text-sm leading-6 tracking-widest uppercase text-center hidden lg:block ">
+              <ul className="flex flex-col gap-3 md:flex-row ">
+                <li className="hover:text-orange">
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange">
                   <Link to="/headphones">Headphones</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange">
                   <Link to="/speakers">Speakers</Link>
                 </li>
-                <li>
+                <li className="hover:text-orange">
                   <Link to="/earphones">Earphones</Link>
                 </li>
-              </ul> 
+              </ul>
             </nav>
 
             {/* cart icon */}
-            <button onClick={handleOnClick}>
+            <button className='md:ml-auto' onClick={handleOnClick}>
               <img src={iconCart} alt="" />
             </button>
 

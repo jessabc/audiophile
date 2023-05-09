@@ -8,7 +8,7 @@ export default function Menu() {
 
     return (
  
-        <section className='md:flex'> 
+        <section className=' md:mx-12 md:grid md:grid-cols-3 gap-2  lg:mx-32'> 
 
             <Category 
                 image={categoryHeadphones} 
