@@ -8,7 +8,7 @@ export function useGetData() {
   
   async function getData() {
     try {
-        console.log('fetching')
+        // console.log('fetching')
       const response = await fetch('data.json')
       if(!response.ok) {
         throw new Error((response.status).toString())

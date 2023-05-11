@@ -14,7 +14,7 @@ export default function Header() {
   const {state, dispatch} = useContext(ProductContext)
 
   const [isMenuVisible, setIsMenuVisible] = useState(false)
-  console.log(isMenuVisible)
+  // console.log(isMenuVisible)
 
   function handleOnClick() {
     dispatch({type:'CART_MODAL', payload: true})

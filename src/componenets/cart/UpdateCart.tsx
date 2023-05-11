@@ -40,7 +40,7 @@ export default function UpdateCart({children, thisProduct, isItemAddedModalVisib
     // }, [isOpen])
 
     function getDefaultValue() {
-       console.log(state.cart)
+    //    console.log(state.cart)
         const alreadyInCart =  state.cart.some(product => product.id === thisProduct.id) 
      
        if(alreadyInCart) {
@@ -116,20 +116,23 @@ export default function UpdateCart({children, thisProduct, isItemAddedModalVisib
 
 
     return (
-        <div className="flex">
-            <div className="flex">
-                <button onClick={decrement}>
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
+            <div className="grid grid-cols-3 bg-gray h-12  ">
+                <button className='font-bold text-sm text-center text-black opacity-25 hover:text-orange'  onClick={decrement}>
                     -
                 </button>
 
-                <input value={count}  onChange={(e)=>setCount(parseInt(e.target.value)) }/>
+                <input className='font-bold text-sm text-center text-black bg-gray'  value={count}  onChange={(e)=>setCount(parseInt(e.target.value)) }/>
 
-                <button onClick={increment}>
+                <button className='font-bold text-sm text-center text-black opacity-25 hover:text-orange' onClick={increment}>
                     +
                 </button>
             </div>
 
-            {!state.cartModal && <button onClick={handleOnClick}>add to cart</button>}
+            <div className="">
+              {!state.cartModal && <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange  h-12 w-full hover:bg-lightOrange'  onClick={handleOnClick}>add to cart</button>}  
+            </div>
+            
         
         </div>
     )

@@ -4,6 +4,7 @@ import { IProduct } from '../interfaces';
 import Product from '../componenets/product/Product';
 
 import { useGetData } from "../hooks/useGetData";
+import ProductPageLayout from '../componenets/product/productPageLayout';
 
 const Earphones = () => {
 
@@ -22,10 +23,22 @@ const Earphones = () => {
   const earphoneElements = earphoneData?.map(earphone => <Product key={earphone.id} item={earphone}/>)
 
   return (
-      <>
-        <h1>earphone page</h1>
+      <div>
+        {/* <div className='bg-black'>
+          <h2 className='font-bold text-3xl text-center
+          tracking-wider uppercase text-white py-10'>Headphones</h2>
+        </div>
+        <div className='px-8 md:px-12 lg:px-32 my-10'>
         {earphoneElements}
-      </>
+          </div>   */}
+
+          <ProductPageLayout category='Earphones'>
+          
+          {earphoneElements}
+          </ProductPageLayout>
+      
+       
+      </div>
     )
   };
   

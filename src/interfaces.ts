@@ -19,15 +19,7 @@ export interface IProduct {
     includes: Includes [],
     name: string,
     new: boolean,
-    others: {
-        image: {
-            mobile: string, 
-            tablet: string, 
-            desktop: string,
-        }
-        name: string,
-        slug: string
-    }[],
+    others: RecommendedProduct[],
     price: number,
     slug: string,
     quantity?: number
@@ -42,5 +34,15 @@ export interface Gallery {
 export interface Includes {
     item: string,
     quantity: boolean,
+}
+
+export interface RecommendedProduct  {
+    image: {
+        mobile: string, 
+        tablet: string, 
+        desktop: string,
+    }
+    name: string,
+    slug: string
 }
 

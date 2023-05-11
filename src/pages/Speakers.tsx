@@ -2,6 +2,7 @@ import {useContext, useEffect} from 'react'
 import {ProductContext} from '../ProductContext'
 import { IProduct } from '../interfaces';
 import Product from '../componenets/product/Product';
+import ProductPageLayout from '../componenets/product/productPageLayout';
 
 import { useGetData } from "../hooks/useGetData";
 
@@ -23,10 +24,23 @@ const Speakers = () => {
 
 
   return (
-      <>
-        <h1>speakerss page</h1>
+      <div className=''>
+
+{/* <div className='bg-black'>
+          <h2 className='font-bold text-3xl text-center
+          tracking-wider uppercase text-white py-10'>Headphones</h2>
+        </div>
+
+        <div className='px-8 md:px-12 lg:px-32 mt-10 '>
         {speakersElements}
-      </>
+          </div>  */}
+
+          <ProductPageLayout category='Speakers'>
+          
+          {speakersElements}
+          </ProductPageLayout>
+
+      </div>
    )
 
 };
