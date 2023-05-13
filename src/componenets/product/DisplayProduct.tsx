@@ -1,47 +1,48 @@
 import { Link, useLocation } from "react-router-dom"
-import { Includes, RecommendedProduct } from "../../interfaces"
-import UpdateCart from "../cart/UpdateCart"
+import { IProduct, Includes, RecommendedProduct } from "../../interfaces"
+import UpdateCart from "../cart/Counter"
 import ItemAddedModal from "../modals/ItemAddedModal"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import OtherProductYouMayLike from "./OtherProductYouMayLike"
-
+import { ProductContext } from "../../ProductContext"
+import { useUpdateCart } from "../../hooks/useUpdateCart"
+import Counter from "../cart/Counter"
 
 export default function DisplayProduct() {
+    const {state, dispatch} = useContext(ProductContext)
+   
 
     const [isItemAddedModalVisible, setIsItemAddedModalVisible] = useState(false)
 
-
     const location = useLocation()
+    const thisProduct = location.state
+
+    const [count, setCount] = useState(0)
+
+  const [  updateCart] = useUpdateCart(count, setCount)
 
     // console.log(location.state)
-
+    
     const {state: {id, image, name, description, price, features, includes, gallery, others}} = location
 
-  
 
-   
+    const youMayAlsoLikeElements = others.map((product: RecommendedProduct, index) => <OtherProductYouMayLike key={index} product={product} />)
 
-    // function getGallery() {
-    //      let galleryArr = []
-    //     for(let image in gallery) {
-    //     galleryArr = [...galleryArr, gallery[image]] 
-    //     } 
+    const featuresEl = features.split('\n\n').map((paragraph, index) => <p key={index} className="mb-3">{paragraph}</p>)
 
-    //     return galleryArr
-    // }
-    
-
-    // const galleryElMob = getGallery().map(image =>  <img src={`.${image.mobile}`} className="rounded-lg mb-5"/>)
-
-    // const galleryElTablet = getGallery().map((image, index) =>  <img src={`.${image.tablet}`} className={`rounded-lg  `}/>)
-    
-
-
-    const youMayAlsoLikeElements = others.map((product: RecommendedProduct) => <OtherProductYouMayLike product={product} />)
-
-    const featuresEl = features.split('\n\n').map(paragraph => <p className="mb-3">{paragraph}</p>)
-
-    console.log(featuresEl)
+    function handleOnClick(thisProduct) {
+console.log('what')
+        updateCart(thisProduct)
+        
+      
+            setIsItemAddedModalVisible(true)
+        setTimeout(() => {
+            setIsItemAddedModalVisible(false)
+        }, 2000);
+       
+        
+    }
+ 
 
     return  (
         <div className="px-8 md:px-12 lg:px-32">
@@ -67,11 +68,20 @@ export default function DisplayProduct() {
                     <p className="font-bold text-lg  uppercase text-black"> $ {price}</p>
         
                     {/* add to  cart */}
-                    <UpdateCart thisProduct = {location.state} isItemAddedModalVisible={isItemAddedModalVisible}
+                    <Counter 
+                  count={count} setCount={setCount}
+                    thisProduct = {location.state} isItemAddedModalVisible={isItemAddedModalVisible}
                     setIsItemAddedModalVisible={setIsItemAddedModalVisible}
                     />
-  
+
                 </div> 
+
+                <button className='   w-1/2  font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange  h-12hover:bg-lightOrange'  
+                onClick={()=>handleOnClick(location.state)}
+                >
+                    add to cart
+                </button>
+                
                 </div>
                
 
@@ -156,3 +166,4 @@ export default function DisplayProduct() {
        
     )
 }
+

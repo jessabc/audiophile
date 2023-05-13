@@ -7,7 +7,7 @@ export  function usecartItemElements() {
 
     const {state, dispatch} = useContext(ProductContext)
   
-    const cartItemElements = state.cart.map(item => <CartItem key={item.id} item={item}/>)
+    const cartItemElements = state.cart.map((item, index) => <CartItem key={index} item={item}/>)
      
     return cartItemElements
     

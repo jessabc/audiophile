@@ -11,6 +11,8 @@ export default function CartModal() {
 
   const {state, dispatch} = useContext(ProductContext)
 
+  console.log(state.cart)
+
   const getTotal = useGetTotal()
 
   const navigate = useNavigate();
@@ -69,35 +71,43 @@ export default function CartModal() {
 
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
 
+                <div className='flex flex-col gap-3 '>
 
-                  {/* cart num and remove all line */}
-                  <div className="flex justify-between">
-                    <p>Cart {state.cart.length}</p>
+                 {/* cart num and remove all line */}
+                 <div className="flex justify-between">
+                    <p className='font-bold tracking-wider uppercase text-black'>Cart ({state.cart.length})</p>
                     <button
                       type="button"
-                      className=""
+                      className="font-medium leading-6 underline text-black opacity-50"
                       onClick={removeAll}
                     >
-                     removal all
+                     Removal All
                     </button>
                   </div>
 
                   <CartItems />
 
-                  <div className='flex'>
-                    <p>total</p>
-                    <p>${getTotal}</p>
+                  <div className='flex justify-between'>
+                    <p className='font-medium leading-6 text-black opacity-50'>Total</p>
+                    <p className='font-bold text-lg leading-6 uppercase, text-black'>$ {getTotal}</p>
                   </div>
 
-                  <div className="mt-4">
+                  <div className=''>
                     <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+
+className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-full h-12 hover:bg-lightOrange'
+
+                     
+                      // className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={checkout}
                     >
                      checkout
                     </button>
                   </div>
+
+                </div>
+                
+                 
 
 
                 </Dialog.Panel>

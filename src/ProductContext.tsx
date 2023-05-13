@@ -29,6 +29,8 @@ function reducer(state: AppState, action: Action) {
             return {...state, data: action.payload}
         }
         case 'ADD_TO_CART': {
+            console.log('added')
+            console.log(state.cart)
             return   { ...state, cart: [...state.cart, action.payload]}
         }
         case 'UPDATE_ITEM_IN_CART': {
