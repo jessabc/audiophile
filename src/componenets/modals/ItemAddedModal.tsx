@@ -70,9 +70,15 @@ export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedM
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
 
 
-                <div >
-                    <img src={checkIcon} alt="" />
-                    <p>{name} added to cart</p>
+                <div className='flex md:justify-center md:items-center'>
+                    <div className='w-10 mr-5'>
+                       <img src={checkIcon} alt="" />
+                    </div>
+                   <div className='md:flex'>
+                    <p className='font-semibold'>{name}  </p>
+                    <p className='md:ml-2'> added to cart</p>
+                   </div>
+                    
                 </div>
                  
                    

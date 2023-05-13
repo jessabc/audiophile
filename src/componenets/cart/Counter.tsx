@@ -23,14 +23,7 @@ const {state, dispatch} = useContext(ProductContext)
 
 // const [ updateCart] = useUpdateCart(count, setCount)
 
-useEffect(() => {
-    // const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
-    // if (cartStorage?.length > 0) {
-    //  dispatch({type: 'CART_STORAGE', payload: cartStorage });
 
-    // }
-
-  }, []);
 
 // useEffect(() => {
 //     if(isOpen){
@@ -59,63 +52,51 @@ function increment() {
     setCount(count! + 1)
 }
 
-// useEffect(() => {
-  
-//     if(state.cartModal) {
-//         updateCart(thisProduct)
-    
-//     }
-
-// }, [count])
-
-// function updateCart(thisProduct: IProduct) {
-//     console.log('update cart')
-
-//     const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
-//       console.log(alreadyInCart)
-//       console.log(count)
-//     if(!alreadyInCart) {
-     
-//         if(count! > 0) {
-//                console.log('incart')
-//             dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
-//         }
-//     }else if(alreadyInCart) {
-//         if(count!> 0) {
-//             dispatch({type: 'UPDATE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}}) 
-//         }
-//         if(count === 0) {
-//             dispatch({type: 'REMOVE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}})
-//         }  
-//     }
-
-
-
-// }
-
-
-
-
-
-
-
 useEffect(() => {
-    localStorage.setItem('cartStorage', JSON.stringify(state.cart));
-}, [state.cart]);
-
-
+  
+    if(state.cartModal) {
+        updateCart(thisProduct)
     
+    }
+
+}, [count])
+
+ //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
+ function updateCart(thisProduct: IProduct) {
+    console.log('update cart')
+
+    const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
+      console.log(alreadyInCart)
+      console.log(count)
+    if(!alreadyInCart) {
+     
+        if(count! > 0) {
+               console.log('incart')
+            dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
+        }
+    }else if(alreadyInCart) {
+        if(count!> 0) {
+            dispatch({type: 'UPDATE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}}) 
+        }
+        if(count === 0) {
+            dispatch({type: 'REMOVE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}})
+        }  
+    }
+
+
+
+}
+// /////////////////////////
 
 
 
 
-// ////////////////////////////////
    
 
 
 
     return (
-        <div className="flex gap-3  ">
+      
             <div className={`grid grid-cols-3 
            ${state.cartModal ? '' :   'w-1/2'} bg-gray h-12  `}>
 
@@ -131,10 +112,8 @@ useEffect(() => {
             </div>
 
            
-             {/* <button className='   w-1/2  font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange  h-12hover:bg-lightOrange'  onClick={handleOnClick}>add to cart</button> 
-             */}
+           
             
-        
-        </div>
+     
     )
 }

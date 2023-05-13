@@ -88,6 +88,31 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
     //     }
     //   }, []);
 
+        // LOCAL STORAGE
+console.log('cart', state.cart)
+
+
+
+
+useEffect(() => {
+    console.log('get')
+    const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
+    if (cartStorage?.length > 0) {
+     dispatch({type: 'CART_STORAGE', payload: cartStorage });
+
+    }
+
+  }, []);
+
+
+    useEffect(() => {
+        console.log('set')
+        localStorage.setItem('cartStorage', JSON.stringify(state.cart));
+    }, [state.cart]);
+
+
+
+// ////////////////////////////////
 
 
   

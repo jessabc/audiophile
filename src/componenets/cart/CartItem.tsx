@@ -32,6 +32,35 @@ export default function CartItem({item}: CartItemProps) {
     return 0 
        } 
         }
+
+
+    
+          //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
+    function updateCart(thisProduct: IProduct) {
+        console.log('update cart')
+  
+        const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
+          console.log(alreadyInCart)
+          console.log(count)
+        if(!alreadyInCart) {
+         
+            if(count! > 0) {
+                   console.log('incart')
+                dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
+            }
+        }else if(alreadyInCart) {
+            if(count!> 0) {
+                dispatch({type: 'UPDATE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}}) 
+            }
+            if(count === 0) {
+                dispatch({type: 'REMOVE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}})
+            }  
+        }
+
+ 
+
+    }
+    // /////////////////////////
     
 
     return (
@@ -49,7 +78,7 @@ export default function CartItem({item}: CartItemProps) {
             {item.quantity}</p>}
         
         <div className="col-span-2">
-           {state.cartModal && <Counter thisProduct={item}  count={count} />} 
+           {state.cartModal && <Counter thisProduct={item}  count={count} setCount={setCount}/>} 
         </div>
             
             

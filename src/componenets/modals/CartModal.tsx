@@ -56,7 +56,7 @@ export default function CartModal() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-center justify-center p-4 text-center  md:justify-end md:items-start md:mt-28 md:mr-5 lg:mr-28">
 
               <Transition.Child
                 as={Fragment}
@@ -69,7 +69,7 @@ export default function CartModal() {
               >
 
 
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all md:w-1/2">
 
                 <div className='flex flex-col gap-3 '>
 

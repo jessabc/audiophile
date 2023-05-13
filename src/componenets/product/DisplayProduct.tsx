@@ -11,6 +11,7 @@ import Counter from "../cart/Counter"
 export default function DisplayProduct() {
     const {state, dispatch} = useContext(ProductContext)
    
+    console.log(state.cart)
 
     const [isItemAddedModalVisible, setIsItemAddedModalVisible] = useState(false)
 
@@ -18,8 +19,9 @@ export default function DisplayProduct() {
     const thisProduct = location.state
 
     const [count, setCount] = useState(0)
+    console.log(count)
 
-  const [  updateCart] = useUpdateCart(count, setCount)
+//   const [  updateCart] = useUpdateCart(count, setCount)
 
     // console.log(location.state)
     
@@ -30,7 +32,35 @@ export default function DisplayProduct() {
 
     const featuresEl = features.split('\n\n').map((paragraph, index) => <p key={index} className="mb-3">{paragraph}</p>)
 
-    function handleOnClick(thisProduct) {
+
+    //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
+    function updateCart(thisProduct: IProduct) {
+        console.log('update cart')
+  
+        const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
+          console.log(alreadyInCart)
+          console.log(count)
+        if(!alreadyInCart) {
+         
+            if(count! > 0) {
+                   console.log('incart')
+                dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
+            }
+        }else if(alreadyInCart) {
+            if(count!> 0) {
+                dispatch({type: 'UPDATE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}}) 
+            }
+            if(count === 0) {
+                dispatch({type: 'REMOVE_ITEM_IN_CART', payload: {...thisProduct, quantity: count}})
+            }  
+        }
+
+ 
+
+    }
+    // /////////////////////////
+
+    function handleOnClick() {
 console.log('what')
         updateCart(thisProduct)
         
@@ -56,31 +86,41 @@ console.log('what')
                 <div className="md:flex md:gap-5 lg:gap-20">
                     <div className="md:w-1/2">
                  
-                <img src={`.${image.mobile}`} alt="" className="md:hidden lg:hidden"/>
-                <img src={`.${image.tablet}`} alt=""  className=" hidden md:block lg:hidden"/>
-                <img src={`.${image.desktop}`} alt="" className="hidden md:hidden lg:block"/>
-                 
-                </div>
+                    <img src={`.${image.mobile}`} alt="" className="md:hidden lg:hidden"/>
+                    <img src={`.${image.tablet}`} alt=""  className=" hidden md:block lg:hidden"/>
+                    <img src={`.${image.desktop}`} alt="" className="hidden md:hidden lg:block"/>
+                    
+                    </div>
                 
-                <div className="flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
-                   <p className="font-bold text-2xl tracking-wide pr-40 md:text-4xl">{name}</p>
-                    <p className="font-medium leading-6 text-black opacity-50">{description}</p>
-                    <p className="font-bold text-lg  uppercase text-black"> $ {price}</p>
-        
-                    {/* add to  cart */}
-                    <Counter 
-                  count={count} setCount={setCount}
-                    thisProduct = {location.state} isItemAddedModalVisible={isItemAddedModalVisible}
-                    setIsItemAddedModalVisible={setIsItemAddedModalVisible}
-                    />
+                    <div className="flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
+                    <p className="font-bold text-2xl tracking-wide pr-40 md:text-4xl">{name}</p>
+                        <p className="font-medium leading-6 text-black opacity-50">{description}</p>
+                        <p className="font-bold text-lg  uppercase text-black"> $ {price}</p>
+            
+                        <div className="flex gap-3">
 
-                </div> 
+                           
+                              <Counter 
+                            count={count} setCount={setCount}
+                            thisProduct = {location.state} isItemAddedModalVisible={isItemAddedModalVisible}
+                            setIsItemAddedModalVisible={setIsItemAddedModalVisible}
+                            />
+  
+                            
+                            <button className=' w-1/2 font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange  h-12 hover:bg-lightOrange'  
+                            onClick={handleOnClick}
+                            >
+                                add to cart
+                            </button>
 
-                <button className='   w-1/2  font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange  h-12hover:bg-lightOrange'  
-                onClick={()=>handleOnClick(location.state)}
-                >
-                    add to cart
-                </button>
+                        </div>
+                       
+                        
+
+
+                    </div> 
+
+                    
                 
                 </div>
                
