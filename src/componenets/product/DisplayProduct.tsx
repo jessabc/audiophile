@@ -95,8 +95,8 @@ console.log('what')
                     <div className="flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
                     <p className="font-bold text-2xl tracking-wide pr-40 md:text-4xl">{name}</p>
                         <p className="font-medium leading-6 text-black opacity-50">{description}</p>
-                        <p className="font-bold text-lg  uppercase text-black"> $ {price}</p>
-            
+                        <p className="font-bold text-lg  uppercase text-black"> $ {(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(price))}</p>
+             
                         <div className="flex gap-3">
 
                            

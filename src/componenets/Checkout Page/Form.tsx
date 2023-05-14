@@ -4,6 +4,7 @@ import * as yup from "yup";
 import iconCOD from '../../../public/assets/checkout/icon-cash-on-delivery.svg'
 import { useState } from "react";
 import Summary from "./Summary";
+import { Link } from "react-router-dom";
 
 
 const schema = yup.object({
@@ -44,16 +45,24 @@ export default function Form({isConfirmationModalOpen, setIsConfirmationModalOpe
       }
     }
 
-
+ 
     return (
-        <div className="bg-orange-500">
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mx-8 md:mx-12 lg:mx-32">
 
-            <p>billing details</p>
+          {/* go back button link */}
+          <div className="font-medium text-black opacity-50 py-5">
+               <Link to=".." relative="path" >Go Back</Link> 
+            </div>
+            
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+
+            <p className="font-bold text-2xl tracking-wider uppercase text-black">checkout</p>
+
+            <p className="font-bold text-sm tracking-wider uppercase text-orange">billing details</p>
 
             {/* name */}
-            <label htmlFor="name"> name</label> 
-            <input id="name" placeholder="Alexei Ward" {...register("name")} />
+            <label htmlFor="name" className="font-bold text-sm leading-4 tracking-tighter text-black">Name</label> 
+            <input id="name" placeholder="Alexei Ward" {...register("name")} className="font-bold text-sm leading-5 tracking-tighter text-black opacity-40 py-2 pl-2 rounded-lg border border-solid border-gray "/>
             <p>{errors.name?.message}</p>
 
             {/* email */}
