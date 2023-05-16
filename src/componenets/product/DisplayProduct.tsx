@@ -36,7 +36,8 @@ export default function DisplayProduct() {
     //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
     function updateCart(thisProduct: IProduct) {
         console.log('update cart')
-  
+      
+        
         const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
           console.log(alreadyInCart)
           console.log(count)

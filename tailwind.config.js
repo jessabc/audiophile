@@ -17,7 +17,9 @@ export default {
       'light': '#FAFAFA',
       'black': '#000000',
       'white': '#FFFFFF',
-      'pink': '##fbaf85',
+      'pink': '#fbaf85',
+      'error': '#CD2C2C'
+
     },
   },
   plugins: [],

@@ -80,13 +80,6 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
 
     // console.log(state.cart)
 
-    // useEffect(() => {
-    //     const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
-    //     if (cartStorage?.length > 0) {
-    //      dispatch({type: 'CART_STORAGE', payload: cartStorage });
-
-    //     }
-    //   }, []);
 
         // LOCAL STORAGE
 console.log('cart', state.cart)
@@ -96,10 +89,22 @@ console.log('cart', state.cart)
 
 useEffect(() => {
     console.log('get')
-    const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
-    if (cartStorage?.length > 0) {
-     dispatch({type: 'CART_STORAGE', payload: cartStorage });
+    // const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
+   
+    // if (cartStorage?.length > 0) {
+    //  dispatch({type: 'CART_STORAGE', payload: cartStorage });
 
+    // }
+    
+    try {
+        const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
+   
+        if (cartStorage?.length > 0) {
+         dispatch({type: 'CART_STORAGE', payload: cartStorage });
+    
+        }
+    } catch (error) {
+        console.log(error)
     }
 
   }, []);

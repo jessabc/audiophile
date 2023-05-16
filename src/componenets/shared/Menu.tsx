@@ -4,25 +4,31 @@ import categorySpeakers from '/src/assets/shared/desktop/image-category-thumbnai
 import categoryEarphones from '/src/assets/shared/desktop/image-category-thumbnail-earphones.png'
 
 
-export default function Menu() {
+export default function Menu({isMenuModalVisible, setIsMenuModalVisible}) {
 
     return (
  
-        <section className='  md:mx-12 md:grid md:grid-cols-3 gap-2  lg:mx-32'> 
+        <section className={`md:mx-12 md:grid md:grid-cols-3 gap-2  lg:mx-32 ${isMenuModalVisible ? '' : ''}`}  > 
 
             <Category 
                 image={categoryHeadphones} 
                 link='headphones'
+                isMenuModalVisible={isMenuModalVisible}
+                setIsMenuModalVisible={setIsMenuModalVisible}
             />
 
             <Category 
                 image={categorySpeakers} 
                 link='speakers'
+                isMenuModalVisible={isMenuModalVisible}
+                setIsMenuModalVisible={setIsMenuModalVisible}
             />
 
             <Category 
                 image={categoryEarphones} 
                 link='earphones'
+                isMenuModalVisible={isMenuModalVisible}
+                setIsMenuModalVisible={setIsMenuModalVisible}
             />
 
         </section>

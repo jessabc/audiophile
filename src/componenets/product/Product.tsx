@@ -19,6 +19,9 @@ export default function Product({item, index}:ProductProps) {
     const routeChange = () => { 
         let path = `/${category}/${slug}`; 
         navigate(path, {state: item})
+      
+            window.scrollTo(0, 0)
+        
     }
 
     return (

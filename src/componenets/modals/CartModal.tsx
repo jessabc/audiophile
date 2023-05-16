@@ -5,6 +5,7 @@ import {ProductContext} from '../../ProductContext'
 import CartItems from '../cart/CartItems'
 import { useNavigate } from "react-router-dom";
 import { useGetTotal } from '../../hooks/useGetTotal'
+import CartModalCartItem from '../cart/CartModalCartItem'
 
 
 export default function CartModal() {
@@ -16,6 +17,8 @@ export default function CartModal() {
   const getTotal = useGetTotal()
 
   const navigate = useNavigate();
+
+  const cartModalCartItemElements = state.cart.map((item, index) => <CartModalCartItem key={index} item={item}/>)
 
   function closeModal() {
     dispatch({type:'CART_MODAL', payload: false})
@@ -31,8 +34,11 @@ export default function CartModal() {
   }
 
   function checkout() {
-    closeModal()
+    if(state.cart.length > 0) {
+       closeModal()
     navigate("checkout");
+    }
+   
   }
 
  
@@ -85,8 +91,9 @@ export default function CartModal() {
                     </button>
                   </div>
 
-                  <CartItems />
+                  {cartModalCartItemElements}
 
+ 
                   <div className='flex justify-between'>
                     <p className='font-medium leading-6 text-black opacity-50'>Total</p>
                     <p className='font-bold text-lg leading-6 uppercase, text-black'>$ {getTotal}</p>

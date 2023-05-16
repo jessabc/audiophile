@@ -11,7 +11,9 @@ const Headphones = () => {
   const {state, dispatch} = useContext(ProductContext)
 
   const getData = useGetData()
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   useEffect(() => {
     if(state.data.length < 1) {
     getData()

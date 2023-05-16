@@ -7,7 +7,8 @@ export default function Checkout() {
     let [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false)
     
     return (
-        <div>
+        <div className='lg:bg-gray lg:pb-10
+        '>
             <Form 
                 isConfirmationModalOpen={isConfirmationModalOpen} setIsConfirmationModalOpen={setIsConfirmationModalOpen}
             />

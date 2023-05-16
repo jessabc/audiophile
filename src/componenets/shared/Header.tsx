@@ -7,13 +7,15 @@ import { useState } from "react";
 import { useContext } from 'react'
 import {ProductContext} from '../../ProductContext'
 import Menu from "./Menu";
+import MenuModal from "../modals/MenuModal";
 
 
 export default function Header() {
 
   const {state, dispatch} = useContext(ProductContext)
 
-  const [isMenuVisible, setIsMenuVisible] = useState(false)
+    
+  const [isMenuModalVisible, setIsMenuModalVisible] = useState(false)
   // console.log(isMenuVisible)
 
   function handleOnClick() {
@@ -32,7 +34,7 @@ export default function Header() {
           ">
 
             {/* hamburger on small screen */}
-            <button className="lg:hidden" onClick={()=>setIsMenuVisible(prevState => !prevState)}
+            <button className="lg:hidden" onClick={()=>setIsMenuModalVisible(prevState => !prevState)}
             >
               <img src={iconHamburger} alt="" />
             </button>
@@ -73,9 +75,9 @@ export default function Header() {
             <CartModal />}
 
           {/* menu */}
-          {isMenuVisible && 
+          {isMenuModalVisible && 
           <div className="">
-            <Menu/>
+            <MenuModal  isMenuModalVisible={isMenuModalVisible} setIsMenuModalVisible={setIsMenuModalVisible}/>
           </div>}
           
         </>

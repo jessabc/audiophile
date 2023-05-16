@@ -23,6 +23,7 @@ export default function OtherProductYouMayLike({product} : OtherProductYouMayLik
         let path = `/${item?.category}/${slug}`; 
         navigate(path, {state: item})
         // navigate(path)
+        window.scrollTo(0, 0)
     }
 
     return (

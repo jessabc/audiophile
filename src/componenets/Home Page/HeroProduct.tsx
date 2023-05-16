@@ -15,6 +15,7 @@ export default function HeroProduct() {
     const routeChange = () => { 
         let path = `/${heroItem!.category}/${heroItem!.slug}`; 
         navigate(path, {state: heroItem})
+        window.scrollTo(0, 0)
     }
 
     return (

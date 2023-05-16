@@ -18,6 +18,7 @@ export default function FeaturedProducts() {
         console.log(featuredProduct)
         let path = `/${featuredProduct?.category}/${featuredProduct?.slug}`; 
         navigate(path, {state: featuredProduct})
+        window.scrollTo(0, 0)
     }
  
 
@@ -26,15 +27,15 @@ export default function FeaturedProducts() {
 
             {/* featured product 1 */}
             <div className='flex flex-col justify-center items-center 
-            bg-orange mx-8 rounded-lg gap-5 px-5 py-10 text-center
+            bg-orange mx-8 rounded-lg gap-5 px-5 py-14 text-center
             md:mx-12 md:gap-10 md:py-10
             lg:mx-32
             lg:grid lg:grid-cols-2
             lg:p-0 
-            lg:gap-0 relative
+            lg:gap-0 relative lg:pt-10
             '>
 <div className='watermark '>
-   <svg width="944" height="944" xmlns="http://www.w3.org/2000/svg"  className='object-contain'><g stroke="#FFF" fill="none" fillRule="evenodd" opacity=".202"><circle cx="472" cy="472" r="235.5"/><circle cx="472" cy="472" r="270.5"/><circle cx="472" cy="472" r="471.5"/></g></svg> 
+   <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg"  className=' '><g stroke="#FFF" fill="none" fillRule="evenodd" opacity=".202"><circle cx="472" cy="472" r="235.5"/><circle cx="472" cy="472" r="270.5"/><circle cx="472" cy="472" r="471.5"/></g></svg> 
 </div>
   
                 
@@ -67,7 +68,7 @@ export default function FeaturedProducts() {
                     SPEAKER</p>
                     <p className='font-medium leading-7 text-white opacity-75 md:px-40
                     lg:p-0'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-black w-40 h-12 cursor-pointer ' onClick={() => routeChange(featuredProduct1)}>see product</button>
+                    <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-black w-40 h-12 cursor-pointer hover:bg-white hover:text-black' onClick={() => routeChange(featuredProduct1)}>see product</button>
                 </div>
                 
             </div>
@@ -81,7 +82,7 @@ export default function FeaturedProducts() {
 
                 <div className="absolute top-20 left-5 flex flex-col gap-10 md:left-10">
                     <p className='font-bold text-2xl leading-9 tracking-wider uppercase text-black md:text-4xl '>ZX7 SPEAKER</p>
-                    <button className='font-bold text-sm leading-5 tracking-wide uppercase text-black border  w-40 h-12 cursor-pointer lg:bg-black lg:text-white' onClick={() => routeChange(featuredProduct2)}>see product</button>
+                    <button className='font-bold text-sm leading-5 tracking-wide uppercase text-black border  w-40 h-12 cursor-pointer hover:bg-black hover:text-white  lg:bg-black lg:text-white hover:lg:bg-white hover:lg:text-black' onClick={() => routeChange(featuredProduct2)}>see product</button>
                 </div>
             </div>
 
@@ -98,7 +99,7 @@ export default function FeaturedProducts() {
                 md:m-0 md:p-0 md:h-full md:w-full md:px-5
                 ">
                    <p className='font-bold text-2xl leading-9 tracking-wider uppercase text-black md:text-3xl '>YX1 EARPHONES</p> 
-                   <button className='font-bold text-sm leading-5 tracking-wide uppercase text-black border  w-40 h-12 cursor-pointer lg:bg-black lg:text-white' onClick={() => routeChange(featuredProduct3)}>see product</button>
+                   <button className='font-bold text-sm leading-5 tracking-wide uppercase text-black border  w-40 h-12 cursor-pointer hover:bg-black hover:text-white  lg:bg-black lg:text-white hover:lg:bg-white hover:lg:text-black' onClick={() => routeChange(featuredProduct3)}>see product</button>
                 </div>
             </div>
             
