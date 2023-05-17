@@ -1,24 +1,26 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import Menu from '../shared/Menu'
 
-export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}) {
+
+interface MenuModalProps {
+  isMenuModalVisible: boolean, 
+  setIsMenuModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}: MenuModalProps) {
  
 
     function closeModal() {
-
         setIsMenuModalVisible(false)
-      }
+    }
     
-      function openModal() {
-        setIsMenuModalVisible(true)
-      }
+    function openModal() {
+      setIsMenuModalVisible(true)
+    }
 
     return (
         <div className=''>
-        {/* <div className="fixed inset-0 flex items-center justify-center">
-         
-        </div> */}
   
         <Transition appear show={isMenuModalVisible} as={Fragment}>
           <Dialog as="div" className="relative z-10 " onClose={closeModal}>
@@ -47,8 +49,10 @@ export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}) {
                 >
                   <Dialog.Panel className="transform w-full  bg-white p-6 text-left align-middle shadow-xl transition-all mt-24 ">
                    
-                   <Menu isMenuModalVisible={isMenuModalVisible}
-                   setIsMenuModalVisible={setIsMenuModalVisible}/>
+                   <Menu 
+                    isMenuModalVisible={isMenuModalVisible}
+                    setIsMenuModalVisible={setIsMenuModalVisible}
+                   />
                   
                   </Dialog.Panel>
                 </Transition.Child>

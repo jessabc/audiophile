@@ -10,34 +10,35 @@ interface MenuProps {
     setIsMenuModalVisible?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+
 export default function Menu({isMenuModalVisible, setIsMenuModalVisible}: MenuProps) {
 
     return (
- <FadeInBottomSection>
-        <section className={`md:mx-12 md:grid md:grid-cols-3 gap-2  lg:mx-32 ${isMenuModalVisible ? '' : ''}`}  > 
+        <FadeInBottomSection>
+            <section className={`md:mx-12 md:grid md:grid-cols-3 gap-2  lg:mx-32 ${isMenuModalVisible ? '' : ''}`}  > 
  
-            <Category 
-                image={categoryHeadphones} 
-                link='headphones'
-                isMenuModalVisible={isMenuModalVisible}
-                setIsMenuModalVisible={setIsMenuModalVisible}
-            />
+                <Category 
+                    image={categoryHeadphones} 
+                    link='headphones'
+                    isMenuModalVisible={isMenuModalVisible}
+                    setIsMenuModalVisible={setIsMenuModalVisible}
+                />
 
-            <Category 
-                image={categorySpeakers} 
-                link='speakers'
-                isMenuModalVisible={isMenuModalVisible}
-                setIsMenuModalVisible={setIsMenuModalVisible}
-            />
+                <Category 
+                    image={categorySpeakers} 
+                    link='speakers'
+                    isMenuModalVisible={isMenuModalVisible}
+                    setIsMenuModalVisible={setIsMenuModalVisible}
+                />
 
-            <Category 
-                image={categoryEarphones} 
-                link='earphones'
-                isMenuModalVisible={isMenuModalVisible}
-                setIsMenuModalVisible={setIsMenuModalVisible}
-            />
+                <Category 
+                    image={categoryEarphones} 
+                    link='earphones'
+                    isMenuModalVisible={isMenuModalVisible}
+                    setIsMenuModalVisible={setIsMenuModalVisible}
+                />
 
-        </section>
+            </section>
         </FadeInBottomSection>
     )
 }

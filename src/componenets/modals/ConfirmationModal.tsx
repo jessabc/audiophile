@@ -1,12 +1,11 @@
 import { Dialog, Transition } from '@headlessui/react'
 import {useContext, Fragment, useState } from 'react'
 import {ProductContext} from '../../ProductContext'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import { useGetTotal } from '../../hooks/useGetTotal'
 import iconOrderConfirmation from '../../../public/assets/checkout/icon-order-confirmation.svg'
-import CartItem from '../cart/CartItem'
-import { usecartItemElements } from '../../hooks/useCartItemElements'
-import SummaryCartItem from '../Checkout Page/SummaryCartItem';
+import SummaryCartItem from '../Checkout Page/SummaryCartItem'
+
 
 interface ConfirmationModalProps {
   isConfirmationModalOpen: boolean,
@@ -23,7 +22,7 @@ export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirma
 
   const getTotal = useGetTotal()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const firstCartItem = <SummaryCartItem item={state.cart[0]}/>
 
@@ -88,37 +87,31 @@ export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirma
                     <p className='font-medium leading-6 text-black opacity-50'>You will receive an email confirmation shortly.</p>
 
                     <div className="flex flex-col md:flex-row">
-                        <div className='bg-gray p-4  pr-10 rounded-tl-lg rounded-tr-lg 
-                        md:rounded-bl-lg 
-                        md:w-3/5'>
+                        <div className='bg-gray p-4  pr-10 rounded-tl-lg rounded-tr-lg md:rounded-bl-lg md:w-3/5'>
                           <div className={`${showAllCartItems ? 'hidden' : 'block'}`}>
                              {firstCartItem}
-                          {numItemsInCart > 1 && <button onClick={() => setShowAllCartItems(true)} className='font-bold text-xs  leading-4 tracking-tight text-black opacity-50 pl-9'>and {numItems} other item(s)</button>}  
+                            {numItemsInCart > 1 && <button onClick={() => setShowAllCartItems(true)} className='font-bold text-xs leading-4 tracking-tight text-black opacity-50 pl-9'>and {numItems} other item(s)</button>}  
                           </div>
                           <div className={`${showAllCartItems ? 'block' : 'hidden'}`}>
                             {SummaryCartItemElements}
                             <button onClick={() => setShowAllCartItems(false)} className='font-bold text-xs  leading-4 tracking-tight text-black opacity-50 pl-9'>View less</button> 
                           </div>
-                          
                         </div>
                         
-                        <div className={`flex flex-col rounded-bl-lg rounded-br-lg  
-                        md:rounded-tr-lg 
-                        md:rounded-bl-none gap-2 bg-black p-4 md:w-2/5 ${showAllCartItems ? 'md:justify-end ' : ' md:justify-center'}`}>
+                        <div className={`flex flex-col rounded-bl-lg rounded-br-lg md:rounded-tr-lg md:rounded-bl-none gap-2 bg-black p-4 md:w-2/5 ${showAllCartItems ? 'md:justify-end ' : ' md:justify-center'}`}>
                             <p className='font-medium leading-6 text-white opacity-50 uppercase'>grand total</p>
                             <p className={`font-bold text-lg leading-6 uppercase text-white ${showAllCartItems ? 'md:pb-5 ' : ''}`}>${(new Intl.NumberFormat().format(getTotal))}</p>
                         </div>
-                    </div >
+                      </div >
 
                   </div>
 
                   <div className="mt-4">
                     <button
-                      
                       className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-full h-12 hover:bg-lightOrange'
-                     onClick={handleClick}
+                      onClick={handleClick}
                     >
-                     back to home
+                      back to home
                     </button>
                   </div>
 

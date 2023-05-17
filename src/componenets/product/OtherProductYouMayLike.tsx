@@ -13,16 +13,14 @@ export default function OtherProductYouMayLike({product} : OtherProductYouMayLik
     const {state, dispatch} = useContext(ProductContext)
 
     const {image, name, slug} = product
-// console.log(slug)
+
     const navigate = useNavigate()
 
-        const item = state.data.find(item => item.slug === slug)
-// console.log(item)
+    const item = state.data.find(item => item.slug === slug)
+
     const routeChange = () => { 
-       
         let path = `/${item?.category}/${slug}`; 
         navigate(path, {state: item})
-        // navigate(path)
         window.scrollTo(0, 0)
     }
 
@@ -34,8 +32,12 @@ export default function OtherProductYouMayLike({product} : OtherProductYouMayLik
             <img src={`.${image.desktop}`} alt="" className="hidden md:hidden lg:block rounded-lg"/>
             
             <p className='font-bold text-2xl text-center tracking-wide uppercase text-black'>{name}</p>
+
             <div>
-            <button  className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-40 h-12 hover:bg-lightOrange '  onClick={routeChange}>see product</button>  
+                <button  
+                    className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-40 h-12 hover:bg-lightOrange'  
+                    onClick={routeChange}>see product
+                </button>  
             </div>
         </div>
     )

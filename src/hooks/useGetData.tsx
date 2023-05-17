@@ -1,14 +1,13 @@
 import {useContext} from 'react'
 import {ProductContext} from '../ProductContext'
  
+
 export function useGetData() {
 
   const {state, dispatch} = useContext(ProductContext)
 
-  
   async function getData() {
     try {
-        // console.log('fetching')
       const response = await fetch('data.json')
       if(!response.ok) {
         throw new Error((response.status).toString())
@@ -20,7 +19,5 @@ export function useGetData() {
        console.log(error)
     }
   } 
-
     return getData
-
   }

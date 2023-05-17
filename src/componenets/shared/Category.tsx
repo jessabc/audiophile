@@ -1,18 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
-import { FadeInBottomSection } from "../../Animation/FadeInBottomSection";
+import { useNavigate } from "react-router-dom"
 
 
 interface CategoryProps {
     image: string,
-    link: string
+    link: string,
+    isMenuModalVisible?: boolean,
+    setIsMenuModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 
 export default function Category({image, link, isMenuModalVisible, setIsMenuModalVisible}: CategoryProps) {
 
     const navigate = useNavigate()
-
-   
 
     function handleClick() {
         navigate(`/${link}`)
@@ -22,9 +21,7 @@ export default function Category({image, link, isMenuModalVisible, setIsMenuModa
 
     return (
        
-        <div className={`   flex flex-col justify-end items-center uppercase gap-5 bg-gray rounded-lg my-5 h-64 relative pb-8 mx-8 mb-32 
-        md:mx-0 md:h-44 md:mb-28 lg:h-56 
-    ${isMenuModalVisible ? 'h-36 mt-20 mb-0  md:mb-0 md:mt-20' : ''}` }  >
+        <div className={`flex flex-col justify-end items-center uppercase gap-5 bg-gray rounded-lg my-5 h-64 relative pb-8 mx-8 mb-32 md:mx-0 md:h-44 md:mb-28 lg:h-56 ${isMenuModalVisible ? 'h-36 mt-20 mb-0  md:mb-0 md:mt-20' : ''}`} >
 
             <img src={image} alt="" className={`absolute bottom-16 ${isMenuModalVisible ? 'max-h-40 md:max-h-48' : ''}`}/>
 

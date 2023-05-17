@@ -1,6 +1,7 @@
 import {useContext} from 'react'
 import {ProductContext} from '../ProductContext'
 
+
 export function useGetTotal() {
 
     const {state, dispatch} = useContext(ProductContext)
@@ -14,7 +15,6 @@ export function useGetTotal() {
     }
 
     return getTotal()
-
 }
 
 

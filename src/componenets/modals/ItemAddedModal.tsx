@@ -1,19 +1,17 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useState } from 'react'
-import {useContext} from 'react'
-import {ProductContext} from '../../ProductContext'
-import CartItems from '../cart/CartItems'
-import { useNavigate } from "react-router-dom";
-import { useGetTotal } from '../../hooks/useGetTotal'
 import checkIcon from '../../../public/assets/checkout/icon-order-confirmation.svg'
 
-export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedModalVisible, name}) {
 
-//   const {state, dispatch, isOpen, setIsOpen} = useContext(ProductContext)
+interface ItemAddedModalProps {
+  isItemAddedModalVisible: boolean, 
+  setIsItemAddedModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+  name: string,
+}
 
-//   const getTotal = useGetTotal()
 
-//   const navigate = useNavigate();
+export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedModalVisible, name}: ItemAddedModalProps) {
+
 
   function closeModal() {
     setIsItemAddedModalVisible(false)
@@ -22,16 +20,6 @@ export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedM
   function openModal() {
     setIsItemAddedModalVisible(true)
   }
-
-//   function removeAll() {
-//     dispatch({type:'REMOVE_ALL_ITEMS'})
-//     setIsOpen(false)
-//   }
-
-//   function checkout() {
-//     closeModal()
-//     navigate("checkout");
-//   }
 
  
   return (
@@ -66,24 +54,18 @@ export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedM
                 leaveTo="opacity-0 scale-95"
               >
 
-
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-
 
                 <div className='flex md:justify-center md:items-center'>
                     <div className='w-10 mr-5'>
                        <img src={checkIcon} alt="" />
                     </div>
-                   <div className='md:flex'>
-                    <p className='font-semibold'>{name}  </p>
-                    <p className='md:ml-2'> added to cart</p>
-                   </div>
-                    
-                </div>
-                 
-                   
+                    <div className='md:flex'>
+                      <p className='font-semibold'>{name}</p>
+                      <p className='md:ml-2'> added to cart</p>
+                    </div>
 
-                  
+                </div>
 
                 </Dialog.Panel>
               </Transition.Child>
