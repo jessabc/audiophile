@@ -7,6 +7,9 @@ import OtherProductYouMayLike from "./OtherProductYouMayLike"
 import { ProductContext } from "../../ProductContext"
 import { useUpdateCart } from "../../hooks/useUpdateCart"
 import Counter from "../cart/Counter"
+import { FadeInBottomSection } from "../../Animation/FadeInBottomSection"
+import { FadeInLeftSection } from "../../Animation/FadeInLeftSection "
+import { FadeInRightSection } from "../../Animation/FadeInRightSection"
 
 export default function DisplayProduct() {
     const {state, dispatch} = useContext(ProductContext)
@@ -78,13 +81,13 @@ console.log('what')
     return  (
         <div className="px-8 md:px-12 lg:px-32">
             {/* go back button link */}
-            <div className="font-medium text-black opacity-50 py-5">
+            <div className=" fade-in font-medium text-black opacity-50 py-5">
                <Link to=".." relative="path" >Go Back</Link> 
             </div>
             
             
             <div >
-                <div className="md:flex md:gap-5 lg:gap-20">
+                <div className="fade-in md:flex md:gap-5 lg:gap-20">
                     <div className="md:w-1/2">
                  
                     <img src={`.${image.mobile}`} alt="" className="md:hidden lg:hidden"/>
@@ -93,7 +96,7 @@ console.log('what')
                     
                     </div>
                 
-                    <div className="flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
+                    <div className=" flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
                     <p className="font-bold text-2xl tracking-wide pr-40 md:text-4xl">{name}</p>
                         <p className="font-medium leading-6 text-black opacity-50">{description}</p>
                         <p className="font-bold text-lg  uppercase text-black"> $ {(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(price))}</p>
@@ -126,9 +129,11 @@ console.log('what')
                 </div>
                
 
-
+               
                 <div className="lg:flex lg:gap-10 lg:mb-20">
-                    <div className="lg:w-2/3">
+                  
+                    <div className="lg:w-2/3 fade-in">
+                        <FadeInLeftSection>
                         <div className="flex flex-col gap-5 mt-10">
                             <p className=' font-bold text-2xl tracking-wide uppercase text-black md:text-3xl'>Features: </p>
 
@@ -136,11 +141,12 @@ console.log('what')
                                 {featuresEl}
                             </div>
                         </div>
+                       </FadeInLeftSection>
                     </div>
-                
-                
                     {/* in the box */}
-                    <div className="flex flex-col gap-5 mt-10 mb-20 md:flex-row lg:flex-col ">
+                    <FadeInRightSection>
+                    <div className="fade-in flex flex-col gap-5 mt-10 mb-20 md:flex-row lg:flex-col ">
+                     
                         <p className=' font-bold text-2xl tracking-wide uppercase text-black md:text-3xl md:w-1/2 lg:w-full'>in the box</p>
 
                         <ul className="list-none md:w-1/2 lg:w-full">
@@ -148,11 +154,12 @@ console.log('what')
 
 
                         </ul>
-                    
+                        
                     </div>
-               
+                    </FadeInRightSection>
                 </div>
-              
+               
+                
                
                 <div className="mb-20">
 
@@ -165,14 +172,24 @@ console.log('what')
                     </div> */}
                   
                     <div className=" flex flex-col md:flex-row  gap-5  ">
+                         
                         <div className="md:w-1/2 flex flex-col gap-5 md:justify-between  ">
+                            <FadeInLeftSection>
                            <img src={`.${gallery.first.mobile}`} alt="" className="rounded-lg "/>
-                            <img src={`.${gallery.second.mobile}`} alt="" className="rounded-lg"/> 
+</FadeInLeftSection>
+                           <FadeInLeftSection>
+                            <img src={`.${gallery.second.mobile}`} alt="" className="rounded-lg"/>
+                               </FadeInLeftSection>
                         </div>
-                       
+                        
+
+                          
                        <div className="md:w-1/2">
-                        <img src={`.${gallery.third.mobile}`} alt="" className="rounded-lg"/> 
+                        <FadeInRightSection>
+                        <img src={`.${gallery.third.mobile}`} alt="" className="rounded-lg"/>
+                           </FadeInRightSection>
                        </div>
+                     
                          
                     </div>
 
@@ -192,10 +209,14 @@ console.log('what')
                 </div>
 
                 <div className="mb-44">
+                <FadeInBottomSection>
+
                     <p className=' font-bold text-2xl tracking-wide uppercase text-black mb-12 text-center'>you may also like </p>
                     <div className="md:flex md:gap-5" >
                      {youMayAlsoLikeElements}   
                     </div>
+                    
+        </FadeInBottomSection>
                     
                 </div>
                 

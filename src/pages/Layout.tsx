@@ -1,11 +1,11 @@
 import { Outlet,  useLocation } from "react-router-dom";
-import Header from "../componenets/shared/Header";
-import Footer from "../componenets/shared/Footer";
-import About from "../componenets/shared/About";
-import Menu from "../componenets/shared/Menu";
+import Header from "../componenets/shared/Header"
+import Footer from "../componenets/shared/Footer"
+import About from "../componenets/shared/About"
+import Menu from "../componenets/shared/Menu"
 
 
-const Layout = () => {
+export default function Layout() {
 
   const location = useLocation() 
 
@@ -16,7 +16,7 @@ const Layout = () => {
         <Header/>
 
         <Outlet />
-
+ 
         {/* menu goes here on all pages except home page and checkout*/}
         {(location.pathname != '/' && location.pathname != '/checkout')  && <Menu />}
 
@@ -24,11 +24,10 @@ const Layout = () => {
         {location.pathname != '/checkout' && <About/>}
 
         <Footer/>
+        
       </div>
  
     </>
   
   )
 }
-
-export default Layout

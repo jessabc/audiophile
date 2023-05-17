@@ -10,7 +10,6 @@ export interface IProduct {
     features: string,
     gallery: Gallery[],
     id: 1,
-    // quantity: number,
     image: {
         mobile: string, 
         tablet: string, 

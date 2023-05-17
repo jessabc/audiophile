@@ -1,22 +1,24 @@
 import {useContext, useEffect} from 'react'
 import {ProductContext} from '../ProductContext'
-import { IProduct } from '../interfaces';
-import Product from '../componenets/product/Product';
-
+import { IProduct } from '../interfaces'
+import Product from '../componenets/product/Product'
 import { useGetData } from "../hooks/useGetData";
 import ProductPageLayout from '../componenets/product/productPageLayout';
 
-const Headphones = () => {
+
+export default function Headphones() {
 
   const {state, dispatch} = useContext(ProductContext)
 
   const getData = useGetData()
+  
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  
   useEffect(() => {
     if(state.data.length < 1) {
-    getData()
+      getData()
     }
   },[])
 
@@ -26,27 +28,15 @@ const Headphones = () => {
 
     
   return (
-      <div >
-        {/* <div className='bg-black'>
-          <h2 className='font-bold text-3xl text-center
-          tracking-wider uppercase text-white py-10'>Headphones</h2>
-        </div>
-        <div className='px-8 md:px-12 lg:px-32 my-10'>
-              {headphoneElements}
-
-          </div>  */}
-          
-
-          <ProductPageLayout category='Headphones'>
-          
+      <>
+        <ProductPageLayout category='Headphones'>  
           {headphoneElements}
-          </ProductPageLayout>
-      
-      </div>
+        </ProductPageLayout>
+      </>
     )
-  };
+  }
   
-  export default Headphones;
+ 
 
     
     

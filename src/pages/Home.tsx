@@ -7,28 +7,26 @@ import {ProductContext} from '../ProductContext'
 import { useGetData } from "../hooks/useGetData";
 
 
-const Home = () => {
+export default function Home() {
 
   const {state, dispatch} = useContext(ProductContext)
 
   const getData = useGetData()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
   useEffect(() => {
     if(state.data.length < 1) {
-    getData()
+      getData()
     }
   },[])
 
 
-  
-
-
-
     return (
       <>
-        <div>
+        <div className="fade-in">
 
           <div>
             <HeroProduct/>
@@ -39,11 +37,8 @@ const Home = () => {
           <FeaturedProducts/>
 
         </div> 
-      
       </>
-
     )
-
   }
   
-  export default Home;
+  

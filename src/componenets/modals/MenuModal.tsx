@@ -15,7 +15,7 @@ export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}) {
       }
 
     return (
-        <div className='lg:bg-orange'>
+        <div className=''>
         {/* <div className="fixed inset-0 flex items-center justify-center">
          
         </div> */}
@@ -45,7 +45,7 @@ export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}) {
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className="transform w-screen  bg-white p-6 text-left align-middle shadow-xl transition-all mt-24 ">
+                  <Dialog.Panel className="transform w-full  bg-white p-6 text-left align-middle shadow-xl transition-all mt-24 ">
                    
                    <Menu isMenuModalVisible={isMenuModalVisible}
                    setIsMenuModalVisible={setIsMenuModalVisible}/>

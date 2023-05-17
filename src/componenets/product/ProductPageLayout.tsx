@@ -8,8 +8,8 @@ export default function ProductPageLayout({children, category}: ProductPageLayou
 
 
     return (
-        <div className="">
-         <div className='bg-black'>
+        <div className="fade-in">
+         <div className='bg-black '>
           <h2 className='font-bold text-3xl text-center
           tracking-wider uppercase text-white py-10'>{category}</h2>
         </div>

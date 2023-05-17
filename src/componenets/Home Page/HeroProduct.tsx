@@ -15,11 +15,11 @@ export default function HeroProduct() {
     const routeChange = () => { 
         let path = `/${heroItem!.category}/${heroItem!.slug}`; 
         navigate(path, {state: heroItem})
-        window.scrollTo(0, 0)
+         window.scrollTo(0, 0)
     }
 
     return (
-         <div className="relative mb-36 lg:mb-64">
+         <div className=" fade-in relative mb-64 md:mb-40 lg:mb-64">
 
             <div>
                 {/* small screen / mobile */}
@@ -44,6 +44,7 @@ export default function HeroProduct() {
                 ">NEW PRODUCT</p>
                 <p className='font-bold text-4xl leading-10 text-center tracking-wider uppercase
                 md:text-6xl 
+                lg:text-5xl 
               lg:text-left'>{heroItem?.name}</p>
                 <p className='font-semibold text-center text-white opacity-75 leading-loose my-3 lg:text-left'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                 <button className='font-bold text-sm leading-5 tracking-wide uppercase text-white bg-orange w-40 h-12 hover:bg-lightOrange' onClick={routeChange}>see product</button>

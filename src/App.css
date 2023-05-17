@@ -1,10 +1,98 @@
 .watermark {
     position: absolute;
-    /* left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%); */
     z-index: 1;
-
-    /* opacity: 0.3; */
   }
 
+
+/* https://blog.hubspot.com/website/css-fade-in */
+.fade-in {
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+/* https://dev.to/selbekk/how-to-fade-in-content-as-it-scrolls-into-view-10j4 */
+/* fade in bottom */
+.fade-in-bottom-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-bottom-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* fade in left */
+.fade-in-left-section {
+  opacity: 0;
+  transform: translateX(-20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-left-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* fade in right */
+.fade-in-right-section {
+  opacity: 0;
+  transform: translateX(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-right-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+
+/* fade in top */
+.fade-in-top-section {
+  opacity: 0;
+  transform: translateY(-20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-top-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}

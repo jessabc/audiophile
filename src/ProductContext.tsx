@@ -1,4 +1,4 @@
-import {  ReactNode, createContext, useEffect, useReducer, useState } from "react"
+import {  ReactNode, createContext, useEffect, useReducer } from "react"
 import { IProduct } from "./interfaces"
 
 
@@ -76,51 +76,24 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
 
     const [state, dispatch] = useReducer(reducer, initialState)
     
-    // let [isOpen, setIsOpen] = useState(false)
-
-    // console.log(state.cart)
-
-
-        // LOCAL STORAGE
-console.log('cart', state.cart)
-
-
-
-
-useEffect(() => {
-    console.log('get')
-    // const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
-   
-    // if (cartStorage?.length > 0) {
-    //  dispatch({type: 'CART_STORAGE', payload: cartStorage });
-
-    // }
+    useEffect(() => {
+        try {
+            const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
     
-    try {
-        const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
-   
-        if (cartStorage?.length > 0) {
-         dispatch({type: 'CART_STORAGE', payload: cartStorage });
-    
+            if (cartStorage?.length > 0) {
+            dispatch({type: 'CART_STORAGE', payload: cartStorage });
+        
+            }
+        } catch (error) {
+            console.log(error)
         }
-    } catch (error) {
-        console.log(error)
-    }
-
   }, []);
 
-
     useEffect(() => {
-        console.log('set')
         localStorage.setItem('cartStorage', JSON.stringify(state.cart));
     }, [state.cart]);
 
 
-
-// ////////////////////////////////
-
-
-  
     return (
         <ProductContext.Provider value={{state, dispatch}}>
             {children}

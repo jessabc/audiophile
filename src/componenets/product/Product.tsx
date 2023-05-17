@@ -1,6 +1,7 @@
+// import { FadeInLeftSection } from "../../Animation/FadeInLeftSection ";
+import { FadeInBottomSection } from "../../Animation/FadeInBottomSection";
 import { IProduct } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-
 
 interface ProductProps {
     item: IProduct,
@@ -25,6 +26,7 @@ export default function Product({item, index}:ProductProps) {
     }
 
     return (
+        <FadeInBottomSection>
         <div className="mb-28 flex flex-col gap-5 justify-center items-center lg:flex-row lg:gap-10">
             <div className={`lg:w-1/2 ${oddIndex ? 'lg:order-1' : null}`}>
                <img src={image.mobile} alt="" className="md:hidden lg:hidden rounded-lg"/>
@@ -41,5 +43,6 @@ export default function Product({item, index}:ProductProps) {
             </div>
            
         </div>
+        </FadeInBottomSection>
     )
 }

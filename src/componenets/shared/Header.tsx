@@ -8,11 +8,13 @@ import { useContext } from 'react'
 import {ProductContext} from '../../ProductContext'
 import Menu from "./Menu";
 import MenuModal from "../modals/MenuModal";
+import { NavLink } from "react-router-dom";
 
 
 export default function Header() {
 
   const {state, dispatch} = useContext(ProductContext)
+  const [isShowing, setIsShowing] = useState(false)
 
     
   const [isMenuModalVisible, setIsMenuModalVisible] = useState(false)
@@ -24,7 +26,9 @@ export default function Header() {
 
     return  (
        <>
-          <header className="flex justify-between bg-black px-8 py-10 border-b border-gray
+    
+  
+          <header className=" fade-in flex justify-between bg-black px-8 py-10 border-b border-gray
 
           md:px-12 md:justify-start md:gap-10
 
@@ -40,28 +44,36 @@ export default function Header() {
             </button>
 
             {/* audiophile logo */}
-            <Link to='/'>
+            <NavLink to='/' >
                 <img src={logo} alt="" />
-            </Link>
+            </NavLink>
 
             {/* nav on tablet and desktop */}
             <nav className="font-bold text-white text-sm leading-6 tracking-widest uppercase text-center hidden lg:block ">
               <ul className="flex flex-col gap-3 md:flex-row ">
                 <li className="hover:text-orange">
-                  <Link to="/">Home</Link>
+                  <NavLink to="/" className={({ isActive }) =>
+         isActive ? 'text-orange' : undefined
+        }>Home</NavLink>
                 </li>
                 <li className="hover:text-orange">
-                  <Link to="/headphones">Headphones</Link>
+                  <NavLink to="/headphones" className={({ isActive }) =>
+         isActive ? 'text-orange' : undefined
+        }>Headphones</NavLink>
                 </li>
                 <li className="hover:text-orange">
-                  <Link to="/speakers">Speakers</Link>
+                  <NavLink to="/speakers" className={({ isActive }) =>
+         isActive ? 'text-orange' : undefined
+        }>Speakers</NavLink>
                 </li>
                 <li className="hover:text-orange">
-                  <Link to="/earphones">Earphones</Link>
+                  <NavLink to="/earphones" className={({ isActive }) =>
+         isActive ? 'text-orange' : undefined
+        }>Earphones</NavLink>
                 </li>
               </ul>
             </nav>
-
+ 
             {/* cart icon */}
             <button className='md:ml-auto' onClick={handleOnClick}>
               <img src={iconCart} alt="" />
@@ -79,7 +91,7 @@ export default function Header() {
           <div className="">
             <MenuModal  isMenuModalVisible={isMenuModalVisible} setIsMenuModalVisible={setIsMenuModalVisible}/>
           </div>}
-          
+        
         </>
     )
 }
