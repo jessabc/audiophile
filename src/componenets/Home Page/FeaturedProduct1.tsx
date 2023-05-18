@@ -6,7 +6,7 @@ import { IProduct } from '../../interfaces';
 
 export default function FeaturedProduct1() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const featuredProduct1 = state.data?.find(item => item.name === "ZX9 Speaker")
 
@@ -28,9 +28,9 @@ export default function FeaturedProduct1() {
                     </div>
 
                     <div className='w-1/2 md:w-1/3 lg:w-3/4 lg:self-end lg:justify-self-center z-10'>
-                        <img src={'../../../public/assets/home/mobile/image-speaker-zx9.png'} alt="" className='w-full md:hidden lg:hidden '/>
-                        <img src={'../../../public/assets/home/tablet/image-speaker-zx9.png'} alt="" className='w-full hidden md:block lg:hidden '/>
-                        <img src={'../../../public/assets/home/desktop/image-speaker-zx9.png'} alt="" className='w-full hidden lg:block lg:object-scale-down lg:h-72'/>
+                        <img src={'assets/home/tablet/image-speaker-zx9.png'} alt={featuredProduct1?.name} className='w-full md:hidden lg:hidden '/>
+                        <img src={'assets/home/tablet/image-speaker-zx9.png'} alt={featuredProduct1?.name}  className='w-full hidden md:block lg:hidden '/>
+                        <img src={'assets/home/desktop/image-speaker-zx9.png'} alt={featuredProduct1?.name}  className='w-full hidden lg:block lg:object-scale-down lg:h-72'/>
                     </div>
 
                     <div className='flex flex-col justify-center items-center gap-5 px-5 text-center md:gap-10  lg:items-start lg:text-left lg:gap-5 lg:p-10 z-10'>

@@ -15,10 +15,9 @@ interface ConfirmationModalProps {
 
 export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirmationModalOpen}: ConfirmationModalProps) {
  
-
   const [showAllCartItems, setShowAllCartItems] = useState(false)
   
-  const {state, dispatch} = useContext(ProductContext)
+  const {state} = useContext(ProductContext)
 
   const getTotal = useGetTotal()
 
@@ -34,10 +33,6 @@ export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirma
 
   function closeModal() {
     setIsConfirmationModalOpen(false)
-  }
-
-  function openModal() {
-    setIsConfirmationModalOpen(true)
   }
 
   function handleClick() {

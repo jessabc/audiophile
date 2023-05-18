@@ -6,7 +6,6 @@ interface ProductPageLayoutProps {
 
 export default function ProductPageLayout({children, category}: ProductPageLayoutProps) {
 
-
     return (
         <div className="fade-in">
             <div className='bg-black '>

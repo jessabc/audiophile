@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom"
 
 export default function Header() {
 
-  const [isShowing, setIsShowing] = useState(false)
+  // const [isShowing, setIsShowing] = useState(false)
 
   const [isMenuModalVisible, setIsMenuModalVisible] = useState(false)
 

@@ -8,7 +8,7 @@ import heroDesktop from '../../assets/home/desktop/image-hero.jpg'
 
 export default function HeroProduct() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const heroItem = state.data?.find(item => item.name === "XX99 Mark II Headphones")
     

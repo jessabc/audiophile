@@ -6,11 +6,10 @@ import ConfirmationModal from '../componenets/modals/ConfirmationModal'
 export default function Checkout() {
 
     let [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false)
-    
+     
     return (
         <div className='fade-in lg:bg-gray lg:pb-10'>
             <Form 
-                isConfirmationModalOpen={isConfirmationModalOpen} 
                 setIsConfirmationModalOpen={setIsConfirmationModalOpen}
             />
 

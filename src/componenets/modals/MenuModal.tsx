@@ -14,10 +14,7 @@ export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}: M
     function closeModal() {
         setIsMenuModalVisible(false)
     }
-    
-    function openModal() {
-      setIsMenuModalVisible(true)
-    }
+  
 
     return (
         <div className=''>

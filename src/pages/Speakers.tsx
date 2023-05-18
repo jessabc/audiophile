@@ -2,13 +2,13 @@ import {useContext, useEffect} from 'react'
 import {ProductContext} from '../ProductContext'
 import { IProduct } from '../interfaces'
 import Product from '../componenets/product/Product'
-import ProductPageLayout from '../componenets/product/productPageLayout'
+import ProductPageLayout from '../componenets/product/ProductPageLayout'
 import { useGetData } from "../hooks/useGetData"
 
 
 export default function Speakers() {
 
-  const {state, dispatch} = useContext(ProductContext)
+  const {state} = useContext(ProductContext)
 
   const getData = useGetData()
 

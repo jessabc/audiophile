@@ -10,7 +10,7 @@ interface OtherProductYouMayLikeProps {
 
 export default function OtherProductYouMayLike({product} : OtherProductYouMayLikeProps) {
     
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const {image, name, slug} = product
 

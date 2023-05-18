@@ -4,7 +4,7 @@ import {ProductContext} from '../ProductContext'
 
 export function useGetTotal() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     function getTotal() {
         let total =  state.cart.reduce((acc, curr) => {

@@ -17,11 +17,7 @@ export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedM
     setIsItemAddedModalVisible(false)
   }
 
-  function openModal() {
-    setIsItemAddedModalVisible(true)
-  }
 
- 
   return (
     <>
 

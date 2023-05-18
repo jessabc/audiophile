@@ -1,12 +1,12 @@
 import { FadeInBottomSection } from '../../animation/FadeInBottomSection';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
-import { IProduct } from '../../interfaces';
+import { IProduct } from '../../interfaces'
 
 export default function featuredProduct3() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const featuredProduct3 = state.data?.find(item => item.name === "YX1 Wireless Earphones")
 
@@ -25,9 +25,9 @@ export default function featuredProduct3() {
             <div className={`mx-8 md:grid md:grid-cols-2 md:gap-2 md:mx-12 lg:mx-32`} >
 
                 <div className='md:w-fit '>
-                    <img src={'../../../public/assets/home/mobile/image-earphones-yx1.jpg'} alt="" className='rounded-lg md:hidden lg:hidden'/>
-                    <img src={'../../../public/assets/home/tablet/image-earphones-yx1.jpg'} alt="" className='rounded-lg hidden md:block lg:hidden'/>
-                    <img src={'../../../public/assets/home/desktop/image-earphones-yx1.jpg'} alt="" className='rounded-lg hidden lg:block '/> 
+                    <img src={'assets/home/mobile/image-earphones-yx1.jpg'} alt={featuredProduct3?.name}  className='rounded-lg md:hidden lg:hidden'/>
+                    <img src={'assets/home/tablet/image-earphones-yx1.jpg'} alt={featuredProduct3?.name} className='rounded-lg hidden md:block lg:hidden'/>
+                    <img src={'assets/home/desktop/image-earphones-yx1.jpg'} alt={featuredProduct3?.name} className='rounded-lg hidden lg:block '/> 
                 </div>
 
                 <div className="bg-gray rounded-lg mt-5 mb-20 h-48 flex flex-col gap-5 justify-center items-start pl-5 

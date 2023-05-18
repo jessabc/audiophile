@@ -24,12 +24,11 @@ const schema = yup.object({
 
 
   interface FormProps {
-    isConfirmationModalOpen: boolean,
     setIsConfirmationModalOpen: React.Dispatch<React.SetStateAction<boolean>>
   }
 
 
-  export default function Form({isConfirmationModalOpen, setIsConfirmationModalOpen}: FormProps) {
+  export default function Form({setIsConfirmationModalOpen}: FormProps) {
 
     const [isCODInfoVisible, setIsCODInfoVisible] =  useState(false)
 
@@ -41,11 +40,11 @@ const schema = yup.object({
         resolver: yupResolver(schema)
       })
       
-    function onSubmit(data: FormData) {
+    function onSubmit() {
       setIsConfirmationModalOpen(true)
     }
 
-    function handleOnChange(e) {
+    function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
       if(e.target.id === 'cashOnDelivery') {
           setIsCODInfoVisible(true)
           setIsCashRadioSelected(true)

@@ -6,7 +6,7 @@ import SummaryCartItem from './SummaryCartItem'
 
 export default function Summary() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const SummaryCartItemElements = state.cart.map((item, index) => <SummaryCartItem key={index} item={item}/>)
 

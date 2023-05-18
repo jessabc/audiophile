@@ -11,7 +11,7 @@ interface CartItemProps {
 
 export default function CartModalCartItem({item}: CartItemProps) {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const [count, setCount] = useState(getDefaultValue())
 

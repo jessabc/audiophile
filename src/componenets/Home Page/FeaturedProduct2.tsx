@@ -6,7 +6,7 @@ import { IProduct } from '../../interfaces';
 
 export default function featuredProduct2() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
 
     const featuredProduct2 = state.data?.find(item => item.name === "ZX7 Speaker")
 
@@ -22,10 +22,10 @@ export default function featuredProduct2() {
     return (
         <>
           <FadeInBottomSection>
-                <div className={` f relative mx-8   md:mx-12 lg:mx-32 z-10`}  >
-                    <img src={'../../../public/assets/home/mobile/image-speaker-zx7.jpg '} alt="" className='rounded-lg md:hidden lg:hidden'/>
-                    <img src={'../../../public/assets/home/tablet/image-speaker-zx7.jpg '} alt="" className='rounded-lg hidden md:block lg:hidden'/>
-                    <img src={'../../../public/assets/home/desktop/image-speaker-zx7.jpg '} alt="" className='rounded-lg hidden lg:block'/>
+                <div className={` f relative mx-8   md:mx-12 lg:mx-32 z-10`}  > 
+                    <img src={'/assets/home/mobile/image-speaker-zx7.jpg '} alt={featuredProduct2?.name} className='rounded-lg md:hidden lg:hidden'/>
+                    <img src={'assets/home/tablet/image-speaker-zx7.jpg '} alt={featuredProduct2?.name}  className='rounded-lg hidden md:block lg:hidden'/>
+                    <img src={'assets/home/desktop/image-speaker-zx7.jpg '} alt={featuredProduct2?.name}  className='rounded-lg hidden lg:block'/>
 
                     <div className="absolute top-20 left-5 flex flex-col gap-10 md:left-10">
                         <p className='font-bold text-2xl leading-9 tracking-wider uppercase text-black md:text-4xl '>ZX7 SPEAKER</p>

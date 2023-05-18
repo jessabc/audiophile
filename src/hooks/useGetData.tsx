@@ -4,7 +4,7 @@ import {ProductContext} from '../ProductContext'
 
 export function useGetData() {
 
-  const {state, dispatch} = useContext(ProductContext)
+  const {dispatch} = useContext(ProductContext)
 
   async function getData() {
     try {

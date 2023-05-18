@@ -13,7 +13,7 @@ interface UpdateCartProps {
 
 }
 
-export default function Counter({thisProduct, isItemAddedModalVisible, setIsItemAddedModalVisible, count, setCount}: UpdateCartProps) {
+export default function Counter({thisProduct, count, setCount}: UpdateCartProps) {
  
     const {state, dispatch} = useContext(ProductContext)
 
@@ -33,7 +33,7 @@ export default function Counter({thisProduct, isItemAddedModalVisible, setIsItem
         }
     }, [count])
 
-    //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
+    //  update cart
     function updateCart(thisProduct: IProduct) {
         const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
         if(!alreadyInCart) {
@@ -50,7 +50,6 @@ export default function Counter({thisProduct, isItemAddedModalVisible, setIsItem
             }  
         }
     }
-// /////////////////////////
 
 
     return (

@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 interface FadeInBottomSectionProps {
@@ -10,10 +10,9 @@ export  function FadeInBottomSection({children}: FadeInBottomSectionProps) {
   const domRef =   useRef<HTMLDivElement | null>(null);
 
   
-
+// https://stackoverflow.com/questions/73051303/intersection-observer-in-typescript-throws-error-in-useref
   useEffect(() => {
-//     const current = domRef.current;
-// if (!current) return;
+    if (!domRef.current) return;
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setVisible(entry.isIntersecting));
@@ -21,16 +20,11 @@ export  function FadeInBottomSection({children}: FadeInBottomSectionProps) {
     
     if (domRef.current) observer.observe(domRef?.current);
 
-    // observer.observe(domRef?.current);
-    
     return () => {
       if (domRef.current) observer.unobserve(domRef?.current);
-  };
-      // return () =>  observer?.unobserve(domRef.current) 
+    }
     
-      
-
-  }, []);
+  }, [])
 
     return (
       <div

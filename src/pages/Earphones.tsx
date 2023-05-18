@@ -3,12 +3,12 @@ import {ProductContext} from '../ProductContext'
 import { IProduct } from '../interfaces'
 import Product from '../componenets/product/Product'
 import { useGetData } from "../hooks/useGetData"
-import ProductPageLayout from '../componenets/product/productPageLayout'
+import ProductPageLayout from '../componenets/product/ProductPageLayout'
 
 
 export default function Earphones() { 
 
-  const {state, dispatch} = useContext(ProductContext)
+  const {state} = useContext(ProductContext)
 
   const getData = useGetData()
 

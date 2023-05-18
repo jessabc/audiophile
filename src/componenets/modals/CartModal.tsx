@@ -1,8 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
-import CartItems from '../cart/CartItems'
 import { useNavigate } from "react-router-dom";
 import { useGetTotal } from '../../hooks/useGetTotal'
 import CartModalCartItem from '../cart/CartModalCartItem'
@@ -24,9 +23,9 @@ export default function CartModal() {
     dispatch({type:'CART_MODAL', payload: false})
   }
 
-  function openModal() {
-    dispatch({type:'CART_MODAL', payload: true})
-  }
+  // function openModal() {
+  //   dispatch({type:'CART_MODAL', payload: true})
+  // }
 
   function removeAll() {
     dispatch({type:'REMOVE_ALL_ITEMS'})

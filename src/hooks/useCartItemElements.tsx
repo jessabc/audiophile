@@ -5,7 +5,7 @@ import CartItem from '../componenets/cart/CartItem'
 
 export  function usecartItemElements() {
 
-    const {state, dispatch} = useContext(ProductContext)
+    const {state} = useContext(ProductContext)
   
     const cartItemElements = state.cart.map((item, index) => <CartItem key={index} item={item}/>)
      

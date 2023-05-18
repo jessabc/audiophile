@@ -1,4 +1,3 @@
-
 export interface IProduct {
     category: string,
     categoryImage: {
