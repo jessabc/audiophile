@@ -21,7 +21,7 @@ export default function HeroProduct() {
     }
 
     return (
-         <div className=" fade-in relative mb-64 md:mb-40 lg:mb-64">
+         <div className=" fade-in relative mb-40 mb:36 md:mb-44 lg:mb-40">
 
             <div>
                 {/* small screen / mobile */}
