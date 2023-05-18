@@ -43,7 +43,6 @@ export default function Summary() {
                     </div> 
                 </div>
                 
-
                 <div className='flex justify-between'>
                     <p className='font-medium leading-6 text-black opacity-50 uppercase'>grand total</p>
                     <p className='font-bold text-lg leading-6  uppercase text-orange'>${(new Intl.NumberFormat().format(grandTotal))}</p>

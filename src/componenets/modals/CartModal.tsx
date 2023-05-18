@@ -11,8 +11,6 @@ export default function CartModal() {
 
   const {state, dispatch} = useContext(ProductContext)
 
-  console.log(state.cart)
-
   const getTotal = useGetTotal()
 
   const navigate = useNavigate();
@@ -23,10 +21,6 @@ export default function CartModal() {
     dispatch({type:'CART_MODAL', payload: false})
   }
 
-  // function openModal() {
-  //   dispatch({type:'CART_MODAL', payload: true})
-  // }
-
   function removeAll() {
     dispatch({type:'REMOVE_ALL_ITEMS'})
     dispatch({type:'CART_MODAL', payload: false})
@@ -34,10 +28,9 @@ export default function CartModal() {
 
   function checkout() {
     if(state.cart.length > 0) {
-       closeModal()
-    navigate("checkout");
+      closeModal()
+      navigate("checkout");
     }
-   
   }
 
  

@@ -5,12 +5,13 @@ interface CartItemProps {
     item: IProduct,
 }
 
+
 export default function CartItem({item}: CartItemProps) {
 
     return (
         <>
-            <div className=" ">
-                <img src={`../${item?.image?.mobile}`} alt={item.name} className="rounded-lg "/>
+            <div>
+                <img src={`../${item?.image?.mobile}`} alt={item.name} className="rounded-lg"/>
             </div>
             <div className="col-span-2">
                 <p className="font-bold leading-6 text-black">{item.name}</p>

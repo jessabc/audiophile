@@ -1,8 +1,9 @@
-import { FadeInBottomSection } from '../../animation/FadeInBottomSection';
-import { useNavigate } from "react-router-dom";
+import { FadeInBottomSection } from '../../animation/FadeInBottomSection'
+import { useNavigate } from "react-router-dom"
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
-import { IProduct } from '../../interfaces';
+import { IProduct } from '../../interfaces'
+
 
 export default function FeaturedProduct1() {
 
@@ -13,7 +14,6 @@ export default function FeaturedProduct1() {
     const navigate = useNavigate()
 
     const routeChange = (featuredProduct: IProduct | undefined) => { 
-        console.log(featuredProduct)
         let path = `/${featuredProduct?.category}/${featuredProduct?.slug}`; 
         navigate(path, {state: featuredProduct})
         window.scrollTo(0, 0)
@@ -22,7 +22,7 @@ export default function FeaturedProduct1() {
     return (
         <>
           <FadeInBottomSection>
-                <div className={` flex flex-col justify-center items-center bg-orange mx-8 rounded-lg gap-5 px-5 py-14 text-center md:mx-12 md:gap-10 md:py-10 lg:mx-32 lg:grid lg:grid-cols-2 lg:p-0 lg:gap-0 relative lg:pt-10`} >
+                <div className={`flex flex-col justify-center items-center bg-orange mx-8 rounded-lg gap-5 px-5 py-14 text-center md:mx-12 md:gap-10 md:py-10 lg:mx-32 lg:grid lg:grid-cols-2 lg:p-0 lg:gap-0 relative lg:pt-10`} >
                     <div className='watermark '>
                         <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg"  className=' '><g stroke="#FFF" fill="none" fillRule="evenodd" opacity=".202"><circle cx="472" cy="472" r="235.5"/><circle cx="472" cy="472" r="270.5"/><circle cx="472" cy="472" r="471.5"/></g></svg> 
                     </div>

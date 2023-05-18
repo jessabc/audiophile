@@ -96,3 +96,14 @@
   transform: none;
   visibility: visible;
 }
+
+
+/* hero image and text positioning */
+@media (max-width: 1024px) {
+  .child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+}

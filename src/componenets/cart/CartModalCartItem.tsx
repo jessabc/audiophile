@@ -9,6 +9,7 @@ interface CartItemProps {
     item: IProduct,
 }
 
+
 export default function CartModalCartItem({item}: CartItemProps) {
 
     const {state} = useContext(ProductContext)
@@ -32,7 +33,7 @@ export default function CartModalCartItem({item}: CartItemProps) {
             <CartItem item={item}/>
           
             <div className="col-span-2">
-            <Counter thisProduct={item}  count={count} setCount={setCount}/>
+                <Counter thisProduct={item}  count={count} setCount={setCount}/>
             </div>
             
         </div>

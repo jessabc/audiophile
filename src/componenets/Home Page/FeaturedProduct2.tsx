@@ -1,8 +1,9 @@
-import { FadeInBottomSection } from '../../animation/FadeInBottomSection';
-import { useNavigate } from "react-router-dom";
+import { FadeInBottomSection } from '../../animation/FadeInBottomSection'
+import { useNavigate } from "react-router-dom"
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
-import { IProduct } from '../../interfaces';
+import { IProduct } from '../../interfaces'
+
 
 export default function featuredProduct2() {
 
@@ -13,7 +14,6 @@ export default function featuredProduct2() {
     const navigate = useNavigate()
 
     const routeChange = (featuredProduct: IProduct | undefined) => { 
-        console.log(featuredProduct)
         let path = `/${featuredProduct?.category}/${featuredProduct?.slug}`; 
         navigate(path, {state: featuredProduct})
         window.scrollTo(0, 0)
@@ -22,7 +22,7 @@ export default function featuredProduct2() {
     return (
         <>
           <FadeInBottomSection>
-                <div className={` f relative mx-8   md:mx-12 lg:mx-32 z-10`}  > 
+                <div className={`relative mx-8 md:mx-12 lg:mx-32 z-10`}  > 
                     <img src={'/assets/home/mobile/image-speaker-zx7.jpg '} alt={featuredProduct2?.name} className='rounded-lg md:hidden lg:hidden'/>
                     <img src={'assets/home/tablet/image-speaker-zx7.jpg '} alt={featuredProduct2?.name}  className='rounded-lg hidden md:block lg:hidden'/>
                     <img src={'assets/home/desktop/image-speaker-zx7.jpg '} alt={featuredProduct2?.name}  className='rounded-lg hidden lg:block'/>

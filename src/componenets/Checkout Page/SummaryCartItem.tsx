@@ -6,6 +6,7 @@ interface SummaryCartItemProps {
     item: IProduct
 }
 
+
 export default function SummaryCartItem({item}: SummaryCartItemProps) {
 
     return (

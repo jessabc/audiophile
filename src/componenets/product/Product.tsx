@@ -1,6 +1,7 @@
-import { FadeInBottomSection } from "../../animation/FadeInBottomSection";
-import { IProduct } from "../../interfaces";
-import { useNavigate } from "react-router-dom";
+import { FadeInBottomSection } from "../../animation/FadeInBottomSection"
+import { IProduct } from "../../interfaces"
+import { useNavigate } from "react-router-dom"
+
 
 interface ProductProps {
     item: IProduct,

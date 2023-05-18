@@ -8,6 +8,7 @@ interface OtherProductYouMayLikeProps {
     product: RecommendedProduct,
 }
 
+
 export default function OtherProductYouMayLike({product} : OtherProductYouMayLikeProps) {
     
     const {state} = useContext(ProductContext)

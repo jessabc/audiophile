@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from '/src/assets/shared/desktop/logo.svg' 
 
+
 export default function Footer() {
 
     return  (

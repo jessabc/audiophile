@@ -1,4 +1,4 @@
-import { FadeInBottomSection } from '../../animation/FadeInBottomSection';
+import { FadeInBottomSection } from '../../animation/FadeInBottomSection'
 import { useNavigate } from "react-router-dom"
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
@@ -13,7 +13,6 @@ export default function featuredProduct3() {
     const navigate = useNavigate()
 
     const routeChange = (featuredProduct: IProduct | undefined) => { 
-        console.log(featuredProduct)
         let path = `/${featuredProduct?.category}/${featuredProduct?.slug}`; 
         navigate(path, {state: featuredProduct})
         window.scrollTo(0, 0)

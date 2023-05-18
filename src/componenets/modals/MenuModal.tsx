@@ -8,16 +8,16 @@ interface MenuModalProps {
   setIsMenuModalVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+
 export default function MenuModal({isMenuModalVisible, setIsMenuModalVisible}: MenuModalProps) {
- 
+
 
     function closeModal() {
         setIsMenuModalVisible(false)
     }
   
-
     return (
-        <div className=''>
+        <div>
   
         <Transition appear show={isMenuModalVisible} as={Fragment}>
           <Dialog as="div" className="relative z-10 " onClose={closeModal}>

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import iconArrow from '../../assets/shared/desktop/icon-arrow-right.svg'
 
+
 interface CategoryProps {
     image: string,
     link: string,

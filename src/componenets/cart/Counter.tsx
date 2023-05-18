@@ -13,13 +13,14 @@ interface UpdateCartProps {
 
 }
 
+
 export default function Counter({thisProduct, count, setCount}: UpdateCartProps) {
  
     const {state, dispatch} = useContext(ProductContext)
 
     function decrement() {
         if(count! > 0) {
-        setCount(count! - 1)
+            setCount(count! - 1)
         }
     }
 
@@ -38,7 +39,6 @@ export default function Counter({thisProduct, count, setCount}: UpdateCartProps)
         const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
         if(!alreadyInCart) {
             if(count! > 0) {
-                console.log('incart')
                 dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
             }
         }else if(alreadyInCart) {

@@ -14,7 +14,7 @@ export default function DisplayProduct() {
     
     const [isItemAddedModalVisible, setIsItemAddedModalVisible] = useState(false)
 
-     const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
     const {state, dispatch} = useContext(ProductContext)
 
@@ -28,13 +28,12 @@ export default function DisplayProduct() {
     const featuresEl = features.split('\n\n').map((paragraph: string, index:number) => <p key={index} className="mb-3">{paragraph}</p>)
 
 
-    //  WHY DOESNT THIS WORK AS A USEUPDATECART HOOK??????
+    //  update cart
     function updateCart(thisProduct: IProduct) {    
         const alreadyInCart = state.cart.some((product) => product?.id === thisProduct?.id) 
 
         if(!alreadyInCart) {
             if(count! > 0) {
-                   console.log('incart')
                 dispatch({type: 'ADD_TO_CART', payload: {...thisProduct, quantity: count}}) 
             }
         }else if(alreadyInCart) {
@@ -46,7 +45,6 @@ export default function DisplayProduct() {
             }  
         }
     }
-    // /////////////////////////
 
     function handleOnClick() {
         updateCart(thisProduct)

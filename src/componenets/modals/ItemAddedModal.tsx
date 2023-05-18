@@ -12,7 +12,6 @@ interface ItemAddedModalProps {
 
 export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedModalVisible, name}: ItemAddedModalProps) {
 
-
   function closeModal() {
     setIsItemAddedModalVisible(false)
   }
