@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Headphones from "./pages/Headphones";
-import DisplayProduct from "./componenets/product/DisplayProduct";
-import Speakers from "./pages/Speakers";
-import Earphones from "./pages/Earphones";
-import Checkout from "./pages/Checkout";
-import NoPage from "./pages/NoPage";
-import { ProductContextProvider } from "./ProductContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Layout from "./pages/Layout"
+import Home from "./pages/Home"
+import Headphones from "./pages/Headphones"
+import DisplayProduct from "./componenets/product/DisplayProduct"
+import Speakers from "./pages/Speakers"
+import Earphones from "./pages/Earphones"
+import Checkout from "./pages/Checkout"
+import NoPage from "./pages/NoPage"
+import { ProductContextProvider } from "./ProductContext"
 import './App.css'
 
 

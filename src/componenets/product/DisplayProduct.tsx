@@ -5,9 +5,9 @@ import { useContext, useState } from "react"
 import OtherProductYouMayLike from "./OtherProductYouMayLike"
 import { ProductContext } from "../../ProductContext"
 import Counter from "../cart/Counter"
-import { FadeInBottomSection } from "../../Animation/FadeInBottomSection"
-import { FadeInLeftSection } from "../../Animation/FadeInLeftSection "
-import { FadeInRightSection } from "../../Animation/FadeInRightSection"
+import { FadeInBottomSection } from "../../animation/FadeInBottomSection"
+import { FadeInLeftSection } from "../../animation/FadeInLeftSection "
+import { FadeInRightSection } from "../../animation/FadeInRightSection"
 
 
 export default function DisplayProduct() {
@@ -70,9 +70,9 @@ export default function DisplayProduct() {
                 <div className="fade-in md:flex md:gap-5 lg:gap-20">
 
                     <div className="md:w-1/2">
-                        <img src={`.${image.mobile}`} alt="" className="md:hidden lg:hidden"/>
-                        <img src={`.${image.tablet}`} alt=""  className=" hidden md:block lg:hidden"/>
-                        <img src={`.${image.desktop}`} alt="" className="hidden md:hidden lg:block"/>
+                        <img src={`.${image.mobile}`} alt={`${name} image`}  className="md:hidden lg:hidden"/>
+                        <img src={`.${image.tablet}`} alt={`${name} image`}  className=" hidden md:block lg:hidden"/>
+                        <img src={`.${image.desktop}`} alt={`${name} image`} className="hidden md:hidden lg:block"/>
                     </div>
                 
                     <div className=" flex flex-col gap-5 py-5 md:w-1/2 md:justify-center md:gap-10 lg:pr-20">
@@ -134,16 +134,16 @@ export default function DisplayProduct() {
                          
                         <div className="md:w-1/2 flex flex-col gap-5 md:justify-between  ">
                             <FadeInLeftSection>
-                                <img src={`.${gallery.first.mobile}`} alt="" className="rounded-lg "/>
+                                <img src={`.${gallery.first.mobile}`} alt={`${name} image`} className="rounded-lg "/>
                             </FadeInLeftSection>
                             <FadeInLeftSection>
-                                <img src={`.${gallery.second.mobile}`} alt="" className="rounded-lg"/>
+                                <img src={`.${gallery.second.mobile}`} alt={`${name} image`} className="rounded-lg"/>
                             </FadeInLeftSection>
                         </div>
   
                        <div className="md:w-1/2">
                             <FadeInRightSection>
-                                <img src={`.${gallery.third.mobile}`} alt="" className="rounded-lg"/>
+                                <img src={`.${gallery.third.mobile}`} alt={`${name} image`} className="rounded-lg"/>
                             </FadeInRightSection>
                        </div>
                      

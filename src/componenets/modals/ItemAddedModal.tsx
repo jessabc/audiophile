@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useState } from 'react'
-import checkIcon from '../../../public/assets/checkout/icon-order-confirmation.svg'
+import { Fragment } from 'react'
+import checkIcon from '../../assets/checkout/icon-order-confirmation.svg'
 
 
 interface ItemAddedModalProps {
@@ -58,7 +58,7 @@ export default function ItemAddedModal({isItemAddedModalVisible, setIsItemAddedM
 
                 <div className='flex md:justify-center md:items-center'>
                     <div className='w-10 mr-5'>
-                       <img src={checkIcon} alt="" />
+                       <img src={checkIcon} alt="check icon" />
                     </div>
                     <div className='md:flex'>
                       <p className='font-semibold'>{name}</p>

@@ -11,7 +11,7 @@ export default function Layout() {
 
   return (
     <>
-      <div className="font-display ">
+      <div className="font-display">
 
         <Header/>
 

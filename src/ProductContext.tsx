@@ -61,8 +61,6 @@ function reducer(state: AppState, action: Action) {
         default:
             return state
     }
-
-   
 }
 
 

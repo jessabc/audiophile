@@ -1,7 +1,3 @@
-import {useContext} from 'react'
-import {ProductContext} from '../../ProductContext'
-import { useNavigate } from "react-router-dom";
-import { IProduct } from "../../interfaces";
 import FeaturedProduct1 from './FeaturedProduct1';
 import FeaturedProduct2 from './FeaturedProduct2';
 import FeaturedProduct3 from './FeaturedProduct3';

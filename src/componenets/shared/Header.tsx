@@ -30,12 +30,12 @@ export default function Header() {
               className="lg:hidden" 
               onClick={()=>setIsMenuModalVisible(prevState => !prevState)}
             >
-              <img src={iconHamburger} alt="" />
+              <img src={iconHamburger} alt="hamburger icon" />
             </button>
 
             {/* audiophile logo */}
             <NavLink to='/' >
-                <img src={logo} alt="" />
+                <img src={logo} alt="audiophile logo" />
             </NavLink>
 
             {/* nav on tablet and desktop */}
@@ -69,7 +69,7 @@ export default function Header() {
               className='md:ml-auto' 
               onClick={handleOnClick}
             >
-              <img src={iconCart} alt="" />
+              <img src={iconCart} alt="cart icon" />
             </button>
 
           </header>

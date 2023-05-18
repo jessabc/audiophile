@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
+import heroMob from '../../assets/home/mobile/image-header.jpg'
+import heroTablet from '../../assets/home/tablet/image-header.jpg'
+import heroDesktop from '../../assets/home/desktop/image-hero.jpg'
 
 
 export default function HeroProduct() {
@@ -22,14 +25,14 @@ export default function HeroProduct() {
 
             <div>
                 {/* small screen / mobile */}
-                <img src='/public/assets/home/mobile/image-header.jpg' 
-                alt="" className="w-full md:hidden lg:hidden"/>
+                <img src={heroMob} 
+                alt="headphones" className="w-full md:hidden lg:hidden"/>
                 {/* med screen / tablet */}
-                <img src='/public/assets/home/tablet/image-header.jpg' 
-                alt="" className="w-full hidden md:block lg:hidden"/>
+                <img src={heroTablet}  
+                alt="headphones" className="w-full hidden md:block lg:hidden"/>
                 {/* lg screen / desktop */}
-                <img src='/public/assets/home/desktop/image-hero.jpg' 
-                alt="" className="w-full hidden lg:block"/>
+                <img src={heroDesktop}  
+                alt="headphones" className="w-full hidden lg:block"/>
             </div>
 
             <div className="text-white absolute top-48 px-8  flex flex-col items-center gap-4 md:px-32 md:gap-6 lg:items-start lg:w-1/2 lg:top-1/4">

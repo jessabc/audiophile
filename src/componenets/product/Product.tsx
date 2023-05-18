@@ -1,7 +1,6 @@
-import { FadeInBottomSection } from "../../Animation/FadeInBottomSection";
+import { FadeInBottomSection } from "../../animation/FadeInBottomSection";
 import { IProduct } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-
 
 interface ProductProps {
     item: IProduct,
@@ -22,14 +21,14 @@ export default function Product({item, index}:ProductProps) {
         navigate(path, {state: item})
         window.scrollTo(0, 0) 
     }
-
+   
     return (
         <FadeInBottomSection>
             <div className="mb-28 flex flex-col gap-5 justify-center items-center lg:flex-row lg:gap-10">
                 <div className={`lg:w-1/2 ${oddIndex ? 'lg:order-1' : null}`}>
-                    <img src={image.mobile} alt="" className="md:hidden lg:hidden rounded-lg"/>
-                    <img src={image.tablet} alt="" className="hidden md:block lg:hidden rounded-lg" />
-                    <img src={image.desktop} alt="" className="hidden md:hidden lg:block rounded-lg"/>  
+                    <img src={image.mobile} alt={`${name} image`} className="md:hidden lg:hidden rounded-lg"/>
+                    <img src={image.tablet} alt={`${name} image`}  className="hidden md:block lg:hidden rounded-lg" />
+                    <img src={image.desktop} alt={`${name} image`}  className="hidden md:hidden lg:block rounded-lg"/>  
                 </div>
             
                 <div className=" flex flex-col gap-5 justify-center items-center lg:w-1/2 lg:items-start">

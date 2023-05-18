@@ -3,8 +3,8 @@ import {useContext, Fragment, useState } from 'react'
 import {ProductContext} from '../../ProductContext'
 import { useNavigate } from "react-router-dom"
 import { useGetTotal } from '../../hooks/useGetTotal'
-import iconOrderConfirmation from '../../../public/assets/checkout/icon-order-confirmation.svg'
 import SummaryCartItem from '../Checkout Page/SummaryCartItem'
+import checkIcon from '../../assets/checkout/icon-order-confirmation.svg'
 
 
 interface ConfirmationModalProps {
@@ -81,7 +81,7 @@ export default function ConfirmationModal({isConfirmationModalOpen,setIsConfirma
               
                   {/* MODAL CONTENT */}
                   <div className='flex flex-col gap-3 justify-start items-start'>
-                    <img src={iconOrderConfirmation} alt="" className='w-14'/>
+                    <img src={checkIcon} alt="check icon" className='w-14'/>
                     <p className='font-bold text-2xl leading-7 track uppercase text-black'>THANK YOU <br/>
                     FOR YOUR ORDER</p>
                     <p className='font-medium leading-6 text-black opacity-50'>You will receive an email confirmation shortly.</p>

@@ -1,5 +1,5 @@
 import {  Link } from "react-router-dom";
-
+import logo from '/src/assets/shared/desktop/logo.svg' 
 
 export default function Footer() {
 
@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="lg:flex lg:justify-between lg:w-full">
                 
                 {/* logo */}
-                <img src='../../../public/assets/shared/desktop/logo.svg' alt="" className="mb-14 lg:mb-0"/>
+                <img src={logo} alt="audiophile logo" className="mb-14 lg:mb-0"/>
 
                 {/* nav */}
                 <nav className="font-bold text-white text-sm leading-6 tracking-widest uppercase text-center  

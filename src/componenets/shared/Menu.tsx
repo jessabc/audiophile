@@ -2,12 +2,12 @@ import Category from './Category'
 import categoryHeadphones from '/src/assets/shared/desktop/image-category-thumbnail-headphones.png'
 import categorySpeakers from '/src/assets/shared/desktop/image-category-thumbnail-speakers.png'
 import categoryEarphones from '/src/assets/shared/desktop/image-category-thumbnail-earphones.png'
-import { FadeInBottomSection } from "../../Animation/FadeInBottomSection";
+import { FadeInBottomSection } from "../../animation/FadeInBottomSection"
 
 
 interface MenuProps {
     isMenuModalVisible?: boolean,
-    setIsMenuModalVisible?: React.Dispatch<React.SetStateAction<boolean>>
+    setIsMenuModalVisible?: React.Dispatch<React.SetStateAction<boolean>> | any
 }
 
 

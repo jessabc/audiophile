@@ -1,4 +1,4 @@
-import { FadeInBottomSection } from '../../Animation/FadeInBottomSection';
+import { FadeInBottomSection } from '../../animation/FadeInBottomSection';
 import { useNavigate } from "react-router-dom";
 import {useContext} from 'react'
 import {ProductContext} from '../../ProductContext'
