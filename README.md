@@ -73,7 +73,7 @@ I would like to get more comfortable with:
 
 ### Useful resources
 
-- [Fade content as it scrolls into view](https://www.example.com](https://dev.to/selbekk/how-to-fade-in-content-as-it-scrolls-into-view-10j4) 
+- [Fade content as it scrolls into view](https://dev.to/selbekk/how-to-fade-in-content-as-it-scrolls-into-view-10j4) 
 - [Fade in CSS](https://blog.hubspot.com/website/css-fade-in)
 - [Tailwind cheatsheet](https://tailwindcomponents.com/cheatsheet/)
 - [Typescript React cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
