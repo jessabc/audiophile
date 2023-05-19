@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/jessabc/audiophile)
-- Live Site URL: [Audiophile](https://audiophile-sound.netlify.app))
+- Live Site URL: [Audiophile](https://audiophile-sound.netlify.app)
 
 ## My process
 
