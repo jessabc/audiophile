@@ -76,16 +76,21 @@ export function ProductContextProvider({children}: ProductContextProviderProps) 
     
     useEffect(() => {
         try {
-            const cartStorage = JSON.parse(localStorage.getItem('cartStorage') || "" );
-    
-            if (cartStorage?.length > 0) {
-            dispatch({type: 'CART_STORAGE', payload: cartStorage });
-        
+            // https://stackoverflow.com/questions/67700374/use-localstorage-getitem-with-typescript
+             const cartStorage = localStorage.getItem('cartStorage')
+
+             if (typeof cartStorage === 'string') {
+
+                const cartStorageParse = JSON.parse(cartStorage)
+
+                if (cartStorageParse?.length > 0) {
+                dispatch({type: 'CART_STORAGE', payload: cartStorageParse });
+                }
             }
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
-  }, []);
+    }, [])
 
     useEffect(() => {
         localStorage.setItem('cartStorage', JSON.stringify(state.cart));

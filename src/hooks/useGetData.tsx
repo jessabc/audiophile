@@ -16,7 +16,7 @@ export function useGetData() {
       dispatch({type:'SET_PRODUCT_DATA', payload: data})
     }
      catch(error) {
-       console.log(error)
+       alert(error)
     }
   } 
     return getData
