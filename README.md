@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/jessabc/audiophile)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Audiophile](https://audiophile-sound.netlify.app)
 
 ## My process
 
@@ -82,7 +82,7 @@ I would like to get more comfortable with:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- Website - [My Portfolio](https://jessportfolio.netlify.app))
 
 
 ## Acknowledgments
