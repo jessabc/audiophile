@@ -82,11 +82,11 @@ I would like to get more comfortable with:
 
 ## Author
 
-- Website - [My Portfolio](https://jessportfolio.netlify.app))
+- Website - [My Portfolio](https://jessportfolio.netlify.app)
 
 
 ## Acknowledgments
 
-- I used stackoverflow alot which I have credited in the code
+I used stackoverflow alot which I have credited in the code
 
 
