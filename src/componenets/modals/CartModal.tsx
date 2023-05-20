@@ -86,7 +86,7 @@ export default function CartModal() {
 
                   <div className='flex justify-between'>
                     <p className='font-medium leading-6 text-black opacity-50'>Total</p>
-                    <p className='font-bold text-lg leading-6 uppercase, text-black'>$ {getTotal}</p>
+                    <p className='font-bold text-lg leading-6 uppercase, text-black'>${(new Intl.NumberFormat().format(getTotal))}</p>
                   </div>
 
                   <div className=''>
