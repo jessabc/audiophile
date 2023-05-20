@@ -4,7 +4,7 @@ import * as yup from "yup"
 import { useState } from "react"
 import Summary from "./Summary"
 import { Link } from "react-router-dom"
-
+import CODIcon from '../../assets/checkout/icon-cash-on-delivery.svg'
 
 const schema = yup.object({
     name: yup.string().required('Name is a required field'),
@@ -236,7 +236,7 @@ export default function Form({setIsConfirmationModalOpen}: FormProps) {
             {isCODInfoVisible && 
             <div className="flex my-5">
               <div className="w-1/3 flex justify-center items-center">
-                <img src={'./src/assets/checkout/icon-cash-on-delivery.svg'} alt="" />
+                <img src={CODIcon} alt="" />
               </div>
               
               <p className="font-medium leading-6 text-black opacity-50 w-2/3">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
@@ -262,7 +262,7 @@ export default function Form({setIsConfirmationModalOpen}: FormProps) {
               <div className="flex flex-col gap-2 mb-5">
                 <div className={`flex justify-between items-center`}>
                   <label 
-                    htmlFor="moneyPin"  
+                    htmlFor="moneyPin" 
                     className={`font-bold text-sm leading-4 tracking-tighter text-black ${errors.name ? 'text-error': ''}`}> moneyNumber</label> 
                   <p className={`font-medium text-sm leading-4 tracking-tight text-error text-right`}>{errors.moneyPin?.message}</p>
                 </div>
