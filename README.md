@@ -12,10 +12,8 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -78,11 +76,6 @@ I would like to get more comfortable with:
 - [Tailwind cheatsheet](https://tailwindcomponents.com/cheatsheet/)
 - [Typescript React cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 - [Techbase Typescript course on youTube, particularly the ContextAPI one](https://www.youtube.com/watch?v=bmxQzJHFCV8&list=PLG-Mk4wQm9_LyKE5EwoZz2_GGXR-zJ5Ml&index=5&pp=iAQB)
-
-
-## Author
-
-- Website - [My Portfolio](https://jessportfolio.netlify.app)
 
 
 ## Acknowledgments
