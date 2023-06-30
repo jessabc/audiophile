@@ -2,6 +2,13 @@
 
 This is a solution to the [Audiophile e-commerce website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
+This is the first version of this website. It is built with vite and uses React Router for routing and useContext for state management. The second version is built with next.js and uses its app router for routing and Redux Toolkit for state mangement.
+
+Links for the second version:
+
+- Solution URL: [Github](https://github.com/jessabc/audiophile-next)
+- Live Site URL: [Audiophile](https://audiophile-next-eight.vercel.app/)
+
 ## Table of contents
 
 - [Overview](#overview)
